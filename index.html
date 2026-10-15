@@ -4,1031 +4,708 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Estilo Profesional MBTI · Tenkai Consulting</title>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
+/* ══════════════════════════════════════════════════════════════
+   TENKAI · Estilo Profesional MBTI
+   Sistema de diseño: Manual de Marca 2026 (Zona 2 · proceso activo)
+   ══════════════════════════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --p:#8b3a8f;--b:#3b35a8;--t:#11a8c4;--coral:#d4522a;
-  --grad:linear-gradient(135deg,#3b35a8 0%,#8b3a8f 52%,#d4522a 100%);
+  --i:#3b35a8;--deep:#2d2894;--mag:#8b3a8f;--coral:#d4522a;
+  --bg:#f0eff5;--ink:#1a1a2e;--sub:#555566;--muted:#888899;
+  --border:#e2e0ea;--cream:#ece9f4;--white:#ffffff;
+  --grad:linear-gradient(135deg,#3b35a8 0%,#8b3a8f 50%,#d4522a 100%);
   --grad-h:linear-gradient(90deg,#3b35a8 0%,#d4522a 100%);
-  --ink:#1a1a2e;--paper:#f0eff5;--cream:#ece9f4;--border:#e2e0ea;--muted:#78748c;--sub:#555566;
-  --f:'Figtree',system-ui,sans-serif;
+  --f:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
-body{font-family:var(--f);background:var(--paper);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
-@media print{.no-print{display:none!important}body{background:#fff}.dk{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
-.wrap{max-width:740px;margin:0 auto;padding:0 22px}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;min-height:100vh}
+button{font-family:var(--f)}
+.hidden{display:none!important}
 
-/* HEADER */
-.hdr{background:rgba(255,255,255,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:99}
-.hdr-in{display:flex;align-items:center;justify-content:space-between;padding:10px 22px;max-width:740px;margin:0 auto}
-.hdr-left{display:flex;align-items:center;gap:10px}
-.hdr-logo{width:42px;height:42px;border-radius:9px;object-fit:cover;box-shadow:0 2px 10px rgba(59,53,168,.18);flex-shrink:0}
-.hdr-brand{font-size:14px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hdr-sub{font-size:10px;color:var(--muted);letter-spacing:.8px;margin-top:1px}
-.prog-wrap{display:flex;align-items:center;gap:9px;font-size:12px;color:var(--muted);font-weight:500}
-.prog-bar{width:90px;height:2px;background:var(--border);border-radius:1px;overflow:hidden}
-.prog-fill{height:100%;background:var(--grad);border-radius:1px;transition:width .4s}
+/* ── HEADER (blanco, sticky) ───────────────────────────── */
+.hdr{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--border)}
+.hdr-in{max-width:900px;margin:0 auto;padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hdr-left{display:flex;align-items:center;gap:12px}
+.hdr-left img{width:42px;height:42px;border-radius:9px;display:block}
+.hdr-brand{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
+.hdr-sub{font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.prog-wrap{display:flex;align-items:center;gap:10px;font-size:11px;font-weight:600;color:var(--muted)}
+.prog-bar{width:110px;height:5px;border-radius:3px;background:var(--border);overflow:hidden}
+.prog-fill{height:100%;background:var(--i);border-radius:3px;transition:width .4s ease}
 
-/* PAGES */
-.page{display:none}.page.on{display:block}
+/* ── PÁGINAS Y HERO ────────────────────────────────────── */
+.page{display:none}
+.page.on{display:block}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+.hero{background:var(--i);color:#fff;padding:46px 0 40px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-70px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 66%);pointer-events:none}
+.hero-ink{background:var(--ink)}
+.hero .wrap{position:relative;z-index:2}
+.sup{font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--i)}
+.hero .sup{color:rgba(255,255,255,.5);margin-bottom:12px}
+.hero-thin{display:block;font-size:22px;font-weight:300;color:rgba(255,255,255,.78);letter-spacing:-.2px;line-height:1.2}
+.hero-bold{display:block;font-size:clamp(28px,5.2vw,38px);font-weight:800;letter-spacing:-.5px;color:#fff;line-height:1.1;margin-top:2px}
+.hero-bold.grad-text{max-width:100%;word-break:break-word}
+.grad-text{background:var(--grad-h);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.sec{padding:34px 0 56px}
+/* ── TEXTOS Y FORMULARIOS ──────────────────────────────── */
+.sec-title{font-size:26px;font-weight:800;letter-spacing:-.5px;line-height:1.15;color:var(--ink);margin:4px 0 8px}
+.sec-desc{font-size:14.5px;line-height:1.7;color:var(--sub);max-width:640px;margin-bottom:26px}
+.lbl{display:block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.q{font-size:16px;font-weight:700;letter-spacing:-.2px;color:var(--ink);margin-bottom:6px}
+.help{font-size:13px;color:var(--sub);line-height:1.65;margin-bottom:12px;max-width:620px}
+.intro-p{font-size:15px;line-height:1.8;color:var(--sub);margin-bottom:16px;max-width:640px}
+.intro-p strong{color:var(--ink)}
+input[type=text],input[type=email],select,textarea{font-family:var(--f);width:100%;padding:11px 15px;border:1.5px solid var(--border);border-radius:8px;font-size:14.5px;color:var(--ink);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus,textarea:focus{border-color:var(--i);box-shadow:0 0 0 3px rgba(59,53,168,.1)}
+textarea{resize:vertical;line-height:1.6;min-height:84px}
+.field{margin-bottom:18px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.count{font-size:10.5px;color:var(--muted);text-align:right;margin-top:4px}
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:22px 24px;box-shadow:0 2px 10px rgba(59,53,168,.07);margin-bottom:18px}
+.card-accent{background:#fff;border:1px solid var(--border);border-left:4px solid var(--coral);border-radius:0 14px 14px 0;padding:22px 24px;box-shadow:0 2px 10px rgba(59,53,168,.07);margin-bottom:22px}
+.hint-bar{display:flex;gap:10px;align-items:flex-start;background:var(--cream);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--sub);line-height:1.6;margin-bottom:24px}
+.note{font-size:12px;color:var(--muted);line-height:1.65}
 
-/* HERO */
-.hero{height:268px;background:var(--grad);position:relative;display:flex;align-items:flex-end;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(255,255,255,.08) 0%,transparent 65%)}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(15,15,20,.7) 0%,transparent 55%)}
-.hero-txt{position:relative;z-index:2;padding:32px 22px;max-width:740px;margin:0 auto;width:100%}
-.hero-eye{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.42);margin-bottom:9px}
-.hero-h1{font-size:clamp(26px,5vw,42px);font-weight:800;line-height:1.08;color:#fff;letter-spacing:-1px}
-.hero-h1 em{font-style:italic;font-weight:300;color:rgba(255,255,255,.52)}
-.sec{padding:40px 0 60px}
+/* ── BOTONES ───────────────────────────────────────────── */
+.btn-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 26px;background:var(--i);color:#fff;border:none;border-radius:24px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn:hover{background:var(--deep);transform:translateY(-1px)}
+.btn:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;transform:none}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;background:transparent;color:var(--i);border:2px solid var(--i);border-radius:24px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s}
+.btn-outline:hover{background:var(--i);color:#fff}
+.btn-outline:disabled{opacity:.5;cursor:not-allowed}
+.btn-ghost{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:20px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s}
+.btn-ghost:hover{color:var(--ink);border-color:var(--ink)}
 
-/* INTRO */
-.intro-p{font-size:16px;line-height:1.8;color:var(--muted);font-weight:300;max-width:480px;margin-bottom:32px}
-.lbl{display:block;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:9px}
-.txt-in{width:100%;max-width:360px;padding:13px 17px;display:block;margin-bottom:28px;font-family:var(--f);font-size:18px;font-weight:600;color:var(--ink);background:#fff;border:1.5px solid var(--border);border-radius:7px;outline:none;transition:border-color .2s}
-.txt-in:focus{border-color:var(--p)}
-.txt-in::placeholder{color:var(--border);font-weight:300}
-.instr{background:#fff;border:1px solid var(--border);border-left:3px solid var(--p);border-radius:7px;padding:20px 24px;margin-bottom:32px;max-width:480px}
-.instr p{font-size:14px;line-height:1.8;color:var(--muted);font-weight:300}
-.instr strong{color:var(--ink);font-weight:700}
+.spin{display:inline-block;width:13px;height:13px;border:2px solid var(--border);border-top-color:var(--i);border-radius:50%;animation:sp .8s linear infinite;vertical-align:-2px;margin-right:8px}
+@keyframes sp{to{transform:rotate(360deg)}}
+/* ── FOOTER (gradiente, base Zona 2) ───────────────────── */
+.tk-footer{background:var(--grad);padding:38px 24px 30px;text-align:center}
+.tk-footer-in{max-width:700px;margin:0 auto}
+.tk-footer img{height:44px;width:auto;display:block;margin:0 auto 10px}
+.tk-tag{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:18px}
+.tk-links{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 18px}
+.tk-links a{font-size:11.5px;font-weight:600;color:rgba(255,255,255,.78);text-decoration:none;white-space:nowrap}
+.tk-links a:hover{color:#fff}
+.tk-copy{font-size:9.5px;letter-spacing:.14em;color:rgba(255,255,255,.4);margin-top:18px}
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 30px;background:var(--grad);color:#fff;font-family:var(--f);font-size:14px;font-weight:700;border:none;border-radius:28px;cursor:pointer;box-shadow:0 4px 18px rgba(59,53,168,.22);transition:all .2s}
-.btn:hover{transform:translateY(-1px);box-shadow:0 8px 26px rgba(139,58,143,.30)}
-.btn:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;transform:none;box-shadow:none}
-.btn-g{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:transparent;color:var(--muted);font-family:var(--f);font-size:13px;font-weight:500;border:1px solid var(--border);border-radius:20px;cursor:pointer;transition:all .2s}
-.btn-g:hover{color:var(--ink);border-color:var(--ink)}
-.btn-mail{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:var(--grad);color:#fff;font-family:var(--f);font-size:14px;font-weight:700;border:none;border-radius:28px;cursor:pointer;text-decoration:none;box-shadow:0 4px 18px rgba(59,53,168,.22);transition:all .2s}
-.btn-mail:hover{transform:translateY(-1px)}
+/* ── TOAST ─────────────────────────────────────────────── */
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:11px 22px;border-radius:24px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:all .3s;z-index:200;max-width:90vw;text-align:center}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-/* TRANSITION SCREEN */
-.trans-screen{min-height:calc(100vh - 63px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 22px;text-align:center}
-.trans-part-badge{display:inline-flex;align-items:center;padding:7px 18px;background:var(--grad);color:#fff;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-radius:20px;margin-bottom:24px}
-.trans-count{font-size:clamp(48px,10vw,80px);font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:8px;letter-spacing:-2px}
-.trans-count-lbl{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:28px}
-.trans-title{font-size:clamp(22px,4vw,32px);font-weight:800;color:var(--ink);margin-bottom:12px;letter-spacing:-.5px}
-.trans-desc{font-size:16px;line-height:1.75;color:var(--muted);font-weight:300;max-width:420px;margin:0 auto 36px}
-.trans-tip{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-left:3px solid var(--t);border-radius:7px;padding:14px 18px;max-width:380px;margin:0 auto 36px;text-align:left}
-.trans-tip-icon{font-size:20px;flex-shrink:0}
-.trans-tip-txt{font-size:13px;color:var(--muted);font-weight:300;line-height:1.6}
-.trans-tip-txt strong{color:var(--ink);font-weight:700}
+/* ══════════════════════════════════════════════════════════════
+   ESTILO PROFESIONAL MBTI · estilos propios (Manual de Marca 2026 · Zona 2)
+   Evaluación: header indigo sólido, secciones blancas, resultado en ink.
+   ══════════════════════════════════════════════════════════════ */
+.chips-info{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.info-pill{background:#fff;border:1px solid var(--border);border-radius:24px;padding:8px 16px;font-size:12.5px;font-weight:600;color:var(--sub)}
+.info-pill strong{color:var(--i);font-weight:800}
+.resume{background:#fff;border:1.5px solid var(--i);border-radius:14px;padding:18px 22px;margin-bottom:22px}
+.resume h3{font-size:16px;font-weight:800;letter-spacing:-.2px;margin-bottom:4px}
+.resume p{font-size:13.5px;color:var(--sub);line-height:1.6;margin-bottom:12px}
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 24px}
+.step3{background:#fff;border:1px solid var(--border);border-top:3px solid var(--i);border-radius:12px;padding:14px 14px 16px}
+.step3-n{font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--i);margin-bottom:5px}
+.step3-t{font-size:13px;font-weight:700;line-height:1.4;color:var(--ink)}
 
-/* QUESTION SCREEN */
-.q-scr{padding:32px 0 60px;min-height:calc(100vh - 63px);display:flex;flex-direction:column;position:relative}
-.q-prog-row{display:flex;align-items:center;gap:10px;margin-bottom:24px}
-.q-prog-bg{flex:1;height:3px;background:var(--cream);border-radius:2px;overflow:hidden}
-.q-prog-fg{height:100%;background:var(--grad);border-radius:2px;transition:width .35s}
-.q-prog-lbl{font-size:11px;color:var(--muted);font-weight:600;white-space:nowrap}
-.part-badge-inline{display:inline-flex;align-items:center;padding:5px 12px;background:rgba(59,53,168,.1);color:var(--b);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border-radius:20px;margin-bottom:16px}
+/* ── Pregunta ─────────────────────────────────────────── */
+.q-scr{max-width:720px;margin:0 auto;padding:30px 22px 60px;min-height:calc(100vh - 62px)}
+.q-eye{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.q-eye-l{font-size:9.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--i)}
+.q-eye-r{font-size:11.5px;font-weight:600;color:var(--muted);white-space:nowrap}
+.q-eye-l{min-width:0}
+.q-card{position:relative;background:#fff;border:1px solid var(--border);border-radius:18px;padding:34px 30px 30px;box-shadow:0 2px 10px rgba(59,53,168,.07);overflow:hidden;margin-bottom:18px;animation:qin .3s ease both}
+@keyframes qin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.q-ghost{position:absolute;right:18px;top:-6px;font-size:120px;font-weight:900;color:#e9e7f3;line-height:1;letter-spacing:-6px;pointer-events:none;user-select:none}
+.q-txt{position:relative;z-index:2;font-size:clamp(19px,3.6vw,23px);font-weight:700;line-height:1.45;letter-spacing:-.3px;color:var(--ink);max-width:560px;margin-bottom:8px}
+.q-ask{position:relative;z-index:2;font-size:12.5px;color:var(--muted);margin-bottom:22px}
+.fmt-tag{position:relative;z-index:2;display:inline-block;font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--i);background:var(--cream);border-radius:10px;padding:3px 10px;margin-bottom:14px}
+.resp{position:relative;z-index:2}
+.letter{flex:0 0 28px;width:28px;height:28px;border-radius:50%;background:var(--cream);color:var(--i);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:all .15s}
 
-/* NAV */
-.q-nav{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);padding-top:22px;margin-top:auto}
-.q-hint{font-size:12px;color:var(--border);font-style:italic}
+/* Formato · Duelo (dos tarjetas lado a lado) */
+.duel{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.dcard{display:flex;flex-direction:column;gap:12px;text-align:left;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:16px 18px 20px;cursor:pointer;transition:all .15s;color:var(--ink);font-size:15px;font-weight:700;line-height:1.45;letter-spacing:-.15px}
+.dcard:hover{border-color:var(--i);transform:translateY(-2px);box-shadow:0 6px 18px rgba(59,53,168,.1)}
+.dcard.on{border-color:var(--i);background:var(--i);color:#fff}
+.dcard.on .letter,.srow.on .letter{background:#fff;color:var(--i)}
 
-/* TYPE 1: Tarjetas descriptivas A/B */
-/* ═══════════════════════════════════════════════
-   TYPE 1: SITUACIONES — dos cards grandes apiladas verticalmente
-   Cada opcion es una card completa con icono de letra grande
-   ═══════════════════════════════════════════════ */
-.t1-question{font-size:clamp(19px,3.2vw,26px);font-weight:700;line-height:1.35;color:var(--ink);margin-bottom:28px;letter-spacing:-.4px}
-.t1-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.t1-opt{padding:0;background:#fff;border:2px solid var(--border);border-radius:16px;cursor:pointer;text-align:left;transition:all .18s;display:flex;align-items:stretch;overflow:hidden;width:100%;font-family:var(--f);position:relative}
-.t1-opt::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#3b35a8 0%,#8b3a8f 50%,#d4522a 100%);opacity:0;transition:opacity .18s}
-.t1-opt:hover{border-color:#8b3a8f;transform:translateX(4px);box-shadow:0 4px 18px rgba(139,58,143,.12)}
-.t1-opt.sel{border-color:transparent;box-shadow:0 8px 28px rgba(59,53,168,.22);transform:translateX(4px)}
-.t1-opt.sel::before{opacity:1}
-.t1-opt-letter{width:52px;min-width:52px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--border);background:var(--cream);position:relative;z-index:1;transition:all .18s;letter-spacing:.05em}
-.t1-opt.sel .t1-opt-letter{color:rgba(255,255,255,.35);background:rgba(0,0,0,.12)}
-.t1-opt-txt{font-size:14px;font-weight:500;color:var(--ink);line-height:1.5;padding:18px 20px;position:relative;z-index:1;transition:color .18s;flex:1}
-.t1-opt.sel .t1-opt-txt{color:#fff;font-weight:600}
+/* Formato · Dos caminos (filas completas) */
+.stk{display:flex;flex-direction:column;gap:10px}
+.srow{display:flex;align-items:center;gap:14px;text-align:left;width:100%;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:15px 18px;cursor:pointer;transition:all .15s;color:var(--ink);font-size:15px;font-weight:600;line-height:1.4}
+.srow:hover{border-color:var(--i)}
+.srow.on{background:var(--i);border-color:var(--i);color:#fff}
 
-/* ═══════════════════════════════════════════════
-   TYPE 2: WORD CHIPS — dos palabras grandes en tarjetas con peso visual máximo
-   ═══════════════════════════════════════════════ */
-.t2-prompt{font-size:14px;font-weight:400;color:var(--sub);margin-bottom:22px;text-align:center;line-height:1.6}
-.t2-prompt strong{color:var(--ink);font-weight:700}
-.t2-chips{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px}
-.t2-chip{padding:36px 16px 28px;text-align:center;background:#fff;border:2px solid var(--border);border-radius:18px;cursor:pointer;transition:all .18s;font-size:clamp(20px,4vw,28px);font-weight:900;color:var(--ink);letter-spacing:-.5px;font-family:var(--f);position:relative;overflow:hidden;line-height:1.1}
-.t2-chip::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#3b35a8 0%,#8b3a8f 50%,#d4522a 100%);opacity:0;transition:opacity .18s}
-.t2-chip::after{content:"→";position:absolute;bottom:14px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:800;letter-spacing:2px;color:var(--border);transition:all .18s}
-.t2-chip:hover{border-color:#8b3a8f;transform:translateY(-3px);box-shadow:0 8px 24px rgba(139,58,143,.12)}
-.t2-chip:hover::after{color:#8b3a8f}
-.t2-chip.sel{border-color:transparent;box-shadow:0 10px 32px rgba(59,53,168,.25);transform:translateY(-3px)}
-.t2-chip.sel::before{opacity:1}
-.t2-chip.sel::after{color:rgba(255,255,255,.4);content:"✓"}
-.t2-chip span{position:relative;z-index:1;transition:color .18s}
-.t2-chip.sel span{color:#fff}
+/* Formato · Palabras (dos píldoras) */
+.chipsr{display:flex;gap:14px;flex-wrap:wrap}
+.wchip{flex:1 1 170px;padding:24px 16px;background:#fff;border:1.5px solid var(--border);border-radius:44px;font-size:clamp(18px,3.4vw,22px);font-weight:800;letter-spacing:-.3px;text-align:center;color:var(--ink);cursor:pointer;transition:all .15s}
+.wchip:hover{border-color:var(--i);color:var(--i)}
+.wchip.on{background:var(--i);border-color:var(--i);color:#fff}
 
-/* ═══════════════════════════════════════════════
-   TYPE 3: ESCENARIOS — card de contexto cinematica + opciones como paths
-   ═══════════════════════════════════════════════ */
-.t3-scenario{background:var(--ink);border-radius:16px;padding:22px 26px;margin-bottom:20px;position:relative;overflow:hidden}
-.t3-scenario::before{content:"";position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:radial-gradient(circle,rgba(139,58,143,.22) 0%,transparent 68%);pointer-events:none}
-.t3-scenario::after{content:"";position:absolute;bottom:-30px;left:-30px;width:150px;height:150px;background:radial-gradient(circle,rgba(17,168,196,.14) 0%,transparent 68%);pointer-events:none}
-.t3-scenario-eye{font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.28);margin-bottom:10px;position:relative;z-index:1}
-.t3-scenario-txt{font-size:15px;font-weight:400;line-height:1.7;color:rgba(255,255,255,.82);position:relative;z-index:1}
-.t3-scenario-txt strong{color:#fff;font-weight:700}
-.t3-question{font-size:clamp(17px,2.8vw,22px);font-weight:700;line-height:1.38;color:var(--ink);margin-bottom:16px;letter-spacing:-.2px}
-.t3-opts{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
-.t3-opt{padding:16px 20px 16px 60px;background:#fff;border:2px solid var(--border);border-radius:14px;cursor:pointer;font-size:14px;font-weight:500;color:var(--sub);line-height:1.5;transition:all .18s;font-family:var(--f);text-align:left;position:relative;overflow:hidden}
-.t3-opt::before{content:"";position:absolute;left:20px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:2px solid var(--border);transition:all .18s;background:#fff}
-.t3-opt:hover{border-color:#8b3a8f;color:var(--ink);transform:translateX(4px);box-shadow:0 4px 16px rgba(139,58,143,.10)}
-.t3-opt:hover::before{border-color:#8b3a8f}
-.t3-opt.sel{border-color:#3b35a8;color:var(--ink);background:linear-gradient(to right,#eeeeff 0%,#fff 60%);font-weight:600;box-shadow:0 4px 20px rgba(59,53,168,.12)}
-.t3-opt.sel::before{background:linear-gradient(135deg,#3b35a8,#d4522a);border-color:transparent;box-shadow:0 2px 8px rgba(59,53,168,.35)}
-.t3-opt.sel::after{content:"✓";position:absolute;left:26px;top:50%;transform:translateY(-50%);color:#fff;font-size:12px;font-weight:800;z-index:1}
+/* Formato · Cara a cara (barras apiladas) */
+.vs{display:flex;flex-direction:column;align-items:stretch}
+.vbar{padding:22px 20px;background:#fff;border:1.5px solid var(--border);border-radius:14px;font-size:clamp(19px,3.6vw,24px);font-weight:800;letter-spacing:-.4px;text-align:center;color:var(--ink);cursor:pointer;transition:all .15s}
+.vbar:hover{border-color:var(--i);color:var(--i)}
+.vbar.on{background:var(--i);border-color:var(--i);color:#fff}
+.vmid{align-self:center;margin:-11px 0;position:relative;z-index:3;width:34px;height:34px;border-radius:50%;background:var(--ink);color:#fff;border:3px solid #fff;font-size:10px;font-weight:800;letter-spacing:.06em;display:flex;align-items:center;justify-content:center;text-transform:uppercase}
 
-/* ═══════════════════════════════════════════════
-   TYPE 4: SLIDER — tensión entre dos polos con visualización dramática
-   ═══════════════════════════════════════════════ */
-.t4-question{font-size:clamp(17px,2.8vw,22px);font-weight:700;line-height:1.38;color:var(--ink);margin-bottom:28px;letter-spacing:-.2px}
-.t4-poles{display:flex;justify-content:space-between;margin-bottom:16px;gap:16px;align-items:flex-start}
-.t4-pole{font-size:17px;font-weight:800;color:var(--ink);max-width:38%;line-height:1.2;letter-spacing:-.3px}
-.t4-pole.right{text-align:right}
-.t4-pole-sub{font-size:10px;font-weight:500;color:var(--muted);letter-spacing:.5px;margin-top:3px;text-transform:uppercase}
-.t4-track-wrap{margin-bottom:10px;padding:0 4px}
-.t4-track{position:relative;height:12px;background:var(--cream);border-radius:6px;cursor:pointer;user-select:none;box-shadow:inset 0 1px 4px rgba(0,0,0,.06)}
-.t4-fill{position:absolute;top:0;height:12px;border-radius:6px;background:linear-gradient(90deg,#3b35a8,#d4522a);pointer-events:none}
-.t4-thumb{position:absolute;top:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#3b35a8,#8b3a8f,#d4522a);cursor:grab;box-shadow:0 4px 14px rgba(59,53,168,.4),0 0 0 4px #fff;z-index:2;transition:box-shadow .15s}
-.t4-thumb:active{cursor:grabbing;box-shadow:0 4px 20px rgba(59,53,168,.5),0 0 0 5px #fff}
-.t4-dots{display:flex;justify-content:space-between;padding:0 6px;margin-bottom:24px}
-.t4-dot{width:4px;height:4px;background:var(--border);border-radius:50%}
-.t4-label-wrap{text-align:center;margin-bottom:28px}
-.t4-label{display:inline-block;padding:8px 22px;border-radius:24px;font-size:13px;font-weight:700;letter-spacing:.04em;transition:all .2s}
+/* Formato · Tarjeta (se da vuelta y muestra el significado) */
+.fc{perspective:1000px;margin-bottom:16px}
+.fc-in{position:relative;height:196px;transition:transform .55s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d;cursor:pointer}
+.fc.flipped .fc-in{transform:rotateY(180deg)}
+.fc-face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:14px;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.fc-front{background:var(--ink);color:#fff}
+.fc-back{background:var(--i);color:#fff;transform:rotateY(180deg);align-items:stretch;text-align:left;gap:6px}
+.fc-eye{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px}
+.fc-back .fc-eye{margin-bottom:2px;text-align:center}
+.fc-words{font-size:clamp(20px,4vw,26px);font-weight:800;letter-spacing:-.4px;line-height:1.25}
+.fc-words em{font-style:normal;font-weight:300;color:rgba(255,255,255,.55);margin:0 8px}
+.fc-hint{font-size:11px;color:rgba(255,255,255,.5);margin-top:12px}
+.fc-w{font-size:13.5px;font-weight:800;margin-top:2px}
+.fc-d{font-size:12px;line-height:1.5;color:rgba(255,255,255,.82)}
+.fc-sep{height:1px;background:rgba(255,255,255,.2);margin:4px 0}
 
-/* ═══════════════════════════════════════════════
-   TYPE 5: FLASHCARD — volteable con definiciones, diseño premium
-   ═══════════════════════════════════════════════ */
-.t5-fc-wrap{perspective:1400px;height:200px;cursor:pointer;margin-bottom:22px}
-.t5-fc-inner{position:relative;width:100%;height:100%;transition:transform .55s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
-.t5-fc-wrap.flipped .t5-fc-inner{transform:rotateY(180deg)}
-.t5-fc-face{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px 28px}
-.t5-fc-front{background:var(--ink);color:#fff;text-align:center;border:1px solid rgba(255,255,255,.07)}
-.t5-fc-back{background:linear-gradient(135deg,#3b35a8 0%,#8b3a8f 50%,#d4522a 100%);color:#fff;transform:rotateY(180deg);text-align:center}
-.t5-fc-eye{font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:12px}
-.t5-fc-word{font-size:clamp(22px,4vw,30px);font-weight:900;letter-spacing:-.8px;line-height:1.1}
-.t5-sep{width:40px;height:2px;background:rgba(255,255,255,.2);border-radius:1px;margin:10px auto}
-.t5-fc-hint{font-size:11px;color:rgba(255,255,255,.25);margin-top:12px;letter-spacing:.5px}
-.t5-fc-desc{font-size:12px;font-weight:400;line-height:1.6;color:rgba(255,255,255,.82);margin-top:5px}
-.t5-chips{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:28px}
-.t5-chip{padding:16px 16px;background:#fff;border:2px solid var(--border);border-radius:12px;cursor:pointer;font-size:15px;font-weight:700;color:var(--sub);transition:all .18s;font-family:var(--f);text-align:center;position:relative;overflow:hidden}
-.t5-chip::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,#3b35a8 0%,#8b3a8f 50%,#d4522a 100%);opacity:0;transition:opacity .18s}
-.t5-chip:hover{border-color:#8b3a8f;color:var(--ink);transform:translateY(-2px)}
-.t5-chip.sel{border-color:transparent;box-shadow:0 6px 20px rgba(59,53,168,.22);transform:translateY(-2px)}
-.t5-chip.sel::before{opacity:1}
-.t5-chip span{position:relative;z-index:1;transition:color .18s}
-.t5-chip.sel span{color:#fff}
+/* Formato · Balanza (deslizar entre dos polos) */
+.bal{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:6px}
+.bcard{position:relative;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:14px 14px 16px;font-size:14px;font-weight:700;line-height:1.4;color:var(--ink);transition:all .18s;display:flex;flex-direction:column;gap:10px;opacity:.9}
+.bcard.lean{border-color:var(--i);background:var(--cream)}
+.bcard.lean3{background:var(--i);border-color:var(--i);color:#fff}
+.bcard.lean3 .letter{background:#fff;color:var(--i)}
+.bcard.dim{opacity:.5}
+.bsl{margin-top:20px}
+.sl-lab{text-align:center;font-size:13.5px;font-weight:700;color:var(--sub);min-height:22px;margin-bottom:12px}
+.sl-lab.on{color:var(--i)}
+.qslider{-webkit-appearance:none;appearance:none;width:100%;height:8px;border-radius:4px;outline:none;border:none;padding:0;box-shadow:none;background:var(--border);cursor:pointer}
+.qslider::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--i);cursor:pointer;border:4px solid #fff;box-shadow:0 2px 10px rgba(59,53,168,.35)}
+.qslider::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--i);cursor:pointer;border:4px solid #fff}
+.qslider.off::-webkit-slider-thumb{background:#fff;border:4px solid var(--i)}
+.qslider.off::-moz-range-thumb{background:#fff;border:4px solid var(--i)}
+.bticks{display:flex;justify-content:space-between;padding:0 11px;margin-top:10px}
+.bticks i{display:block;width:2px;height:7px;background:#cfcce0;border-radius:1px}
+.bticks i.c{height:11px;background:var(--muted)}
 
-/* ═══════════════════════════════════════════════
-   QUESTION SCREEN CHROME — numero de fondo, tipo badge
-   ═══════════════════════════════════════════════ */
-.q-bg-num{position:absolute;top:-10px;right:-8px;font-size:clamp(80px,14vw,120px);font-weight:900;line-height:1;color:#d6d3e8;user-select:none;pointer-events:none;letter-spacing:-4px;z-index:0}
-.q-type-tag{display:inline-flex;align-items:center;gap:5px;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:20px;margin-bottom:18px}
+/* Formato · Escenario */
+.scn{position:relative;z-index:2;background:var(--ink);color:#fff;border-radius:14px;padding:18px 22px 20px;margin-bottom:20px}
+.scn-eye{font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px}
+.scn-t{font-size:15.5px;line-height:1.6;font-weight:500;color:rgba(255,255,255,.92)}
 
-@media(max-width:520px){
-  .t2-chips,.t5-chips,.dims{grid-template-columns:1fr}
-  .t4-poles{gap:8px}
-  .t4-pole,.t4-pole.right{text-align:left}
+.q-nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.q-hint{font-size:12px;color:var(--muted)}
+
+/* ── Apertura de capítulo ─────────────────────────────── */
+.mid{max-width:580px;margin:0 auto;padding:56px 22px;text-align:center}
+.mid-badge{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--i);background:var(--cream);border-radius:14px;padding:5px 14px;margin-bottom:24px}
+.mid-ring{--p:0;width:96px;height:96px;border-radius:50%;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:var(--i);letter-spacing:-.5px;background:conic-gradient(var(--i) calc(var(--p)*1%),var(--cream) 0);position:relative}
+.mid-ring::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg)}
+.mid-ring span{position:relative}
+.mid h2{font-size:27px;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin-bottom:10px}
+.mid p{font-size:14.5px;line-height:1.75;color:var(--sub);margin-bottom:22px}
+.mid-tip{background:#fff;border:1px solid var(--border);border-left:4px solid var(--coral);border-radius:0 12px 12px 0;padding:14px 18px;font-size:13.5px;line-height:1.65;color:var(--sub);text-align:left;margin-bottom:26px}
+.mid-tip strong{color:var(--ink)}
+.mid-stats{display:flex;justify-content:center;gap:0;margin-bottom:28px}
+.mid-stat{padding:0 24px;text-align:center}
+.mid-stat+.mid-stat{border-left:1px solid var(--border)}
+.mid-stat b{display:block;font-size:28px;font-weight:900;letter-spacing:-1px;color:var(--ink);line-height:1.1}
+.mid-stat span{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* ── Envío ────────────────────────────────────────────── */
+.send-scr{max-width:560px;margin:0 auto;padding:70px 22px;text-align:center}
+.send-scr h2{font-size:24px;font-weight:800;letter-spacing:-.4px;margin:18px 0 8px}
+.send-scr p{font-size:14.5px;line-height:1.75;color:var(--sub);margin-bottom:20px}
+.big-spin{width:46px;height:46px;border:4px solid var(--cream);border-top-color:var(--i);border-radius:50%;animation:sp .9s linear infinite;margin:0 auto}
+
+/* ── Resultado (pantallazo, fondo ink) ────────────────── */
+.res-hero{background:var(--ink);color:#fff;padding:44px 0 38px;position:relative;overflow:hidden}
+.res-hero::after{content:"";position:absolute;right:-70px;top:-90px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(59,53,168,.4) 0%,transparent 66%)}
+.res-hero .wrap{position:relative;z-index:2}
+.res-ok{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border-radius:20px;padding:6px 14px;font-size:11.5px;font-weight:700;letter-spacing:.04em;margin-bottom:16px}
+.res-ok svg{width:14px;height:14px}
+.res-t{font-size:clamp(26px,5vw,36px);font-weight:800;letter-spacing:-.6px;line-height:1.12;margin-bottom:8px}
+.res-s{font-size:14px;line-height:1.7;color:rgba(255,255,255,.7);max-width:520px}
+.type-card{background:var(--ink);border-radius:18px;padding:34px 26px 30px;text-align:center;margin-bottom:26px;position:relative;overflow:hidden}
+.type-card::after{content:"";position:absolute;left:50%;bottom:-120px;width:340px;height:240px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(212,82,42,.22) 0%,transparent 68%);pointer-events:none}
+.type-eye{font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px;position:relative;z-index:2}
+.type-tiles{display:flex;justify-content:center;gap:clamp(8px,2.4vw,14px);position:relative;z-index:2}
+.tile{flex:0 0 auto;width:clamp(62px,19vw,92px);text-align:center}
+.tile-l{display:flex;align-items:center;justify-content:center;aspect-ratio:1;border-radius:18px;background:var(--i);color:#fff;font-size:clamp(30px,9vw,46px);font-weight:900;letter-spacing:-1px;box-shadow:0 8px 22px rgba(0,0,0,.28)}
+.tile.g .tile-l{background:var(--grad)}
+.tile-n{margin-top:9px;font-size:10.5px;font-weight:700;letter-spacing:.04em;color:rgba(255,255,255,.62);line-height:1.3}
+.type-desc{font-size:14.5px;line-height:1.75;color:rgba(255,255,255,.78);max-width:470px;margin:18px auto 0;position:relative;z-index:2}
+.dim{background:#fff;border:1px solid var(--border);border-radius:14px;padding:16px 20px 18px;margin-bottom:10px;box-shadow:0 2px 10px rgba(59,53,168,.06)}
+.dim-t{font-size:9.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--i);margin-bottom:12px}
+.dim-track{position:relative;height:8px;border-radius:4px;background:var(--border);margin:0 11px}
+.dim-fill{position:absolute;top:0;bottom:0;background:var(--i);border-radius:4px}
+.dim-mid{position:absolute;left:50%;top:-4px;bottom:-4px;width:2px;background:#cfcce0;transform:translateX(-1px)}
+.dim-dot{position:absolute;top:50%;width:22px;height:22px;border-radius:50%;background:var(--i);border:4px solid #fff;box-shadow:0 2px 8px rgba(59,53,168,.35);transform:translate(-50%,-50%)}
+.dim-poles{display:flex;justify-content:space-between;gap:10px;margin-top:14px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.dim-poles .win{color:var(--ink);font-weight:800}
+.traits{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+.trait{padding:9px 18px;border-radius:22px;font-size:13px;font-weight:700;color:#fff;background:var(--i)}
+.trait.g{background:var(--grad-h)}
+.next-box{background:var(--cream);border-radius:14px;padding:20px 24px;font-size:14px;line-height:1.75;color:var(--sub)}
+.next-box strong{color:var(--ink)}
+.restart2{display:flex;flex-direction:column;align-items:center;gap:14px;margin:34px 0 0;padding-top:24px;border-top:1px solid var(--border)}
+.restart-confirm{max-width:480px;text-align:center;background:#fff;border:1.5px solid var(--coral);border-radius:14px;padding:18px 22px}
+.restart-confirm p{font-size:13.5px;line-height:1.65;color:var(--sub);margin-bottom:14px}
+.restart-confirm strong{color:var(--ink)}
+.restart-confirm .actions-row{display:flex;gap:11px;flex-wrap:wrap;justify-content:center}
+
+@media(max-width:560px){
+  .q-hint{display:none}
+  .q-eye-l{letter-spacing:.14em}
+  .q-nav{justify-content:space-between}
+  .duel,.steps3,.grid2{grid-template-columns:1fr}
+  .q-card{padding:28px 20px 24px}
+  .q-ghost{font-size:96px}
+  .bcard{font-size:13px;padding:12px 12px 14px}
+  .mid-stat{padding:0 14px}
+  .fc-in{height:236px}
+  .dim{padding:14px 16px 16px}
 }
-.cta-mail-instr{display:flex;align-items:center;justify-content:center;gap:9px;font-size:13px;color:rgba(255,255,255,.42);font-weight:400;line-height:1.5;max-width:400px;margin:0 auto;text-align:center}
-.cta-mail-instr strong{color:rgba(255,255,255,.75);font-weight:700}
-.cta-mail-instr svg{flex-shrink:0;opacity:.4}
-
-/* ═══════════════════════════════════════════════
-   ENTRANCE ANIMATION (.fup — usada por el render de preguntas)
-   ═══════════════════════════════════════════════ */
-@keyframes fup{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.fup{animation:fup .42s cubic-bezier(.4,0,.2,1) both}
-.fup:nth-child(2){animation-delay:.05s}
-.fup:nth-child(3){animation-delay:.1s}
-.fup:nth-child(4){animation-delay:.14s}
-@media(prefers-reduced-motion:reduce){.fup{animation:none}}
-
-/* ═══════════════════════════════════════════════
-   RESULTS PAGE — diagnóstico final (también es el PDF)
-   ═══════════════════════════════════════════════ */
-#pgRes .sec{padding:38px 0 48px}
-
-/* Hero de resultado — banner gradiente de marca */
-.hero-dark{position:relative;overflow:hidden;background:var(--grad);border-radius:22px;padding:40px 34px 36px;margin-bottom:36px;box-shadow:0 20px 54px rgba(59,53,168,.24)}
-.hero-dark::before{content:"";position:absolute;top:-95px;right:-70px;width:320px;height:320px;background:radial-gradient(circle,rgba(255,255,255,.15) 0%,transparent 64%);pointer-events:none}
-.hero-dark::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(12,12,24,.34) 0%,transparent 58%);pointer-events:none}
-.res-eye{position:relative;z-index:1;font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.52);margin-bottom:15px}
-.res-name{position:relative;z-index:1;font-size:clamp(28px,5.4vw,42px);font-weight:800;line-height:1.04;letter-spacing:-1px;color:#fff}
-.res-sub{position:relative;z-index:1;font-size:13px;font-weight:300;color:rgba(255,255,255,.7);margin-top:12px;letter-spacing:.4px}
-
-/* Etiqueta de sección */
-.sec-lbl{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-
-/* Revelado del tipo — tarjeta oscura */
-.type-reveal{position:relative;overflow:hidden;background:var(--ink);border-radius:20px;padding:36px 30px 32px;border:1px solid rgba(255,255,255,.06)}
-.type-reveal::before{content:"";position:absolute;top:-65px;right:-50px;width:250px;height:250px;background:radial-gradient(circle,rgba(139,58,143,.32) 0%,transparent 68%);pointer-events:none}
-.type-reveal::after{content:"";position:absolute;bottom:-55px;left:-45px;width:210px;height:210px;background:radial-gradient(circle,rgba(17,168,196,.18) 0%,transparent 68%);pointer-events:none}
-.type-eye{position:relative;z-index:1;font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.34);margin-bottom:14px;text-align:center}
-.type-letters{position:relative;z-index:1;text-align:center;font-size:clamp(54px,13vw,82px);font-weight:900;letter-spacing:.07em;line-height:1;background:linear-gradient(90deg,#9a8cff 0%,#e591d3 50%,#ff9d6c 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.type-name{position:relative;z-index:1;text-align:center;font-size:clamp(18px,3.2vw,24px);font-weight:700;color:#fff;margin-top:10px;letter-spacing:-.3px}
-
-/* Barras de dimensión */
-.dims{position:relative;z-index:1;display:flex;flex-direction:column;gap:11px;margin-top:28px}
-.dim-card{background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:13px 16px}
-.dim-poles{display:flex;align-items:center;gap:16px}
-.dim-pole{display:flex;flex-direction:column;align-items:center;min-width:30px;line-height:1}
-.dim-pole-lbl{font-size:18px;font-weight:900;letter-spacing:.02em}
-.dim-pole-score{font-size:10px;font-weight:600;margin-top:4px}
-.dim-pole.winner .dim-pole-lbl{color:#fff}
-.dim-pole.winner .dim-pole-score{color:rgba(255,255,255,.82)}
-.dim-pole.loser .dim-pole-lbl{color:rgba(255,255,255,.3)}
-.dim-pole.loser .dim-pole-score{color:rgba(255,255,255,.28)}
-.dim-bar-track{flex:1;height:8px;background:rgba(255,255,255,.09);border-radius:5px;overflow:hidden}
-.dim-bar-fill{height:100%;border-radius:5px;background:linear-gradient(90deg,#7b73e8,#e591d3 55%,#ff9d6c);box-shadow:0 0 14px rgba(229,145,211,.42)}
-
-/* Teaser — características */
-.teaser{position:relative;overflow:hidden;background:var(--ink);border-radius:20px;padding:28px 28px 30px;border:1px solid rgba(255,255,255,.06)}
-.teaser::before{content:"";position:absolute;top:-55px;left:-45px;width:220px;height:220px;background:radial-gradient(circle,rgba(59,53,168,.3) 0%,transparent 68%);pointer-events:none}
-.teaser::after{content:"";position:absolute;bottom:-50px;right:-40px;width:180px;height:180px;background:radial-gradient(circle,rgba(212,82,42,.16) 0%,transparent 68%);pointer-events:none}
-.teaser-eye{position:relative;z-index:1;font-size:9px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:18px}
-.traits-wrap{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px}
-.trait-pill{display:inline-flex;align-items:center;padding:9px 17px;border-radius:22px;font-size:13px;font-weight:600;color:#fff;letter-spacing:.2px;border:1px solid rgba(255,255,255,.12)}
-
-/* CTA — descarga / envío */
-.cta-dark{position:relative;overflow:hidden;background:var(--grad);border-radius:20px;padding:34px 30px;margin-top:34px;text-align:center;box-shadow:0 18px 48px rgba(139,58,143,.24)}
-.cta-dark::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(12,12,24,.3) 0%,transparent 62%);pointer-events:none}
-.cta-h{position:relative;z-index:1;font-size:clamp(21px,3.6vw,27px);font-weight:800;color:#fff;letter-spacing:-.4px;margin-bottom:11px}
-.cta-p{position:relative;z-index:1;font-size:14px;font-weight:300;line-height:1.7;color:rgba(255,255,255,.84);max-width:430px;margin:0 auto 24px}
-.cta-acts{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:18px}
-.cta-dark .btn{background:#fff;color:var(--b);box-shadow:0 8px 24px rgba(0,0,0,.2);white-space:nowrap}
-.cta-dark .btn:hover{transform:translateY(-1px);box-shadow:0 12px 32px rgba(0,0,0,.26)}
-.cta-mail-print{display:none;position:relative;z-index:1;align-items:center;justify-content:center;gap:9px;font-size:13px;color:rgba(255,255,255,.85);font-weight:400;max-width:420px;margin:0 auto;line-height:1.55}
-.cta-mail-print strong{color:#fff;font-weight:700}
-.cta-mail-print svg{flex-shrink:0;opacity:.6}
-
-/* Footer */
-.ftr{text-align:center;padding:42px 0 6px;margin-top:42px;border-top:1px solid var(--border)}
-.ftr img{width:46px;height:46px;border-radius:11px;object-fit:cover;box-shadow:0 4px 16px rgba(59,53,168,.2);margin-bottom:14px}
-.ftr-brand{font-size:18px;font-weight:800;letter-spacing:3px;text-transform:uppercase;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.ftr-url{font-size:12px;color:var(--muted);letter-spacing:1px;margin-top:5px}
-.soc-row{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:22px}
-.soc-a{display:inline-flex;align-items:center;gap:7px;padding:8px 15px;border:1px solid var(--border);border-radius:22px;text-decoration:none;color:var(--sub);font-size:12px;font-weight:600;background:#fff;transition:all .18s}
-.soc-a svg{width:14px;height:14px;flex-shrink:0}
-.soc-a:hover{color:var(--b);border-color:var(--b);transform:translateY(-1px);box-shadow:0 4px 14px rgba(59,53,168,.12)}
-.ftr-copy{font-size:11px;color:var(--muted);margin-top:24px;letter-spacing:.5px}
-
-@media(max-width:520px){
-  .hero-dark{padding:32px 24px 30px}
-  .type-reveal,.teaser{padding:26px 22px}
-  .cta-dark{padding:30px 22px}
+@media(prefers-reduced-motion:reduce){
+  .q-card{animation:none}
+  .fc-in{transition:none}
 }
 
-/* ═══════════════════════════════════════════════
-   PRINT — el PDF del diagnóstico, prolijo y a color
-   ═══════════════════════════════════════════════ */
-@page{margin:13mm}
+/* ── Impresión: si alguien imprime el pantallazo, sale limpio ── */
+@page{size:A4 portrait;margin:14mm}
 @media print{
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
-  html,body{background:#fff!important}
-  .no-print{display:none!important}
-  .wrap{max-width:100%!important;padding:0!important}
-  #pgRes .sec{padding:0!important}
-  .fup{animation:none!important;opacity:1!important;transform:none!important}
-  /* No cortar tarjetas a la mitad */
-  .hero-dark,.type-reveal,.teaser,.cta-dark,.dim-card,.ftr,.traits-wrap{break-inside:avoid;page-break-inside:avoid}
-  .hero-dark{box-shadow:none!important;margin-bottom:22px}
-  .type-reveal,.teaser{box-shadow:none!important}
-  .cta-dark{box-shadow:none!important;margin-top:24px}
-  /* Mostrar el mail destino en el PDF */
-  .cta-mail-print{display:flex!important}
-  .ftr{break-before:avoid}
-  .soc-a{background:#fff!important}
+  body{background:#fff!important}
+  .hdr,.tk-footer,.toast,.restart2,.no-print{display:none!important}
+  .dim,.type-card,.next-box{break-inside:avoid}
 }
+
 </style>
 </head>
 <body>
 
-<header class="hdr no-print">
+<header class="hdr">
   <div class="hdr-in">
     <div class="hdr-left">
-      <img src="data:image/jpeg;base64,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" alt="Tenkai" class="hdr-logo">
+      <img src="data:image/jpeg;base64,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" alt="Tenkai" width="42" height="42" style="width:42px;height:42px;border-radius:9px;">
       <div><div class="hdr-brand">Tenkai</div><div class="hdr-sub">Consulting</div></div>
     </div>
-    <div class="prog-wrap">
-      <span id="progTxt">Estilo Profesional &middot; MBTI</span>
-      <div class="prog-bar" id="progBarWrap" style="display:none"><div class="prog-fill" id="progFill"></div></div>
-    </div>
+    <div class="prog-wrap"><span id="progTxt">Evaluación</span><div class="prog-bar hidden" id="progBar"><div class="prog-fill" id="progFill" style="width:0%"></div></div></div>
   </div>
 </header>
 
-<!-- INTRO -->
-<div id="pgIntro" class="page on">
-  <div class="hero">
-    <div class="hero-txt">
-      <p class="hero-eye">Diagn&oacute;stico de Estilo Profesional &middot; Tenkai Consulting</p>
-      <h1 class="hero-h1">Descubr&iacute;<br><em>tu estilo profesional</em></h1>
-    </div>
-  </div>
-  <div class="wrap"><div class="sec">
-    <p class="intro-p">El MBTI revela c&oacute;mo process&aacute;s informaci&oacute;n, tom&aacute;s decisiones y te relacion&aacute;s con el entorno laboral. 93 preguntas, unos 15 minutos, y un mapa claro de tu estilo profesional.</p>
-    <label class="lbl">Tu nombre</label>
-    <input class="txt-in" type="text" id="nameInput" placeholder="Nombre y apellido">
-    <div class="instr"><p>El cuestionario tiene <strong>cuatro bloques</strong> con distintos formatos de pregunta. En cada uno eleg&iacute;s entre dos opciones.<br><br>No hay respuestas correctas ni incorrectas. Eleg&iacute; lo que <strong>realmente te describe</strong> en tu vida cotidiana y laboral, no lo que cre&eacute;s que deber&iacute;as ser.</p></div>
-    <button class="btn" id="startBtn" onclick="tkStart()">
-      Comenzar cuestionario
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-    </button>
-  </div></div>
-</div>
+<main id="app"></main>
 
-<!-- TRANSITION -->
-<div id="pgTrans" class="page">
-  <div class="wrap">
-    <div class="trans-screen">
-      <div class="trans-part-badge" id="transBadge"></div>
-      <div class="trans-count" id="transCount"></div>
-      <div class="trans-count-lbl" id="transCountLbl"></div>
-      <div class="trans-title" id="transTitle"></div>
-      <div class="trans-desc" id="transDesc"></div>
-      <div class="trans-tip">
-        <div class="trans-tip-icon">&#128161;</div>
-        <div class="trans-tip-txt" id="transTipTxt"></div>
-      </div>
-      <button class="btn" id="transBtn">
-        Continuar
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-      </button>
-    </div>
-  </div>
-</div>
+<footer class="tk-footer" id="ftr"><div class="tk-footer-in">
+  <a href="https://www.tenkai.com.ar" target="_blank" rel="noopener"><img src="data:image/png;base64,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" alt="Tenkai Consulting"></a>
+  <div class="tk-tag">Diseño de Carrera Profesional</div>
+  <nav class="tk-links">
+    <a href="https://www.tenkai.com.ar" target="_blank" rel="noopener">tenkai.com.ar</a>
+    <a href="mailto:esteban@tenkai.com.ar">esteban@tenkai.com.ar</a>
+    <a href="https://wa.me/5491170657746" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://www.linkedin.com/in/toledoesteban" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/esteban.tenkai" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.tiktok.com/@esteban.tenkai" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.facebook.com/tenkai.esteban" target="_blank" rel="noopener">Facebook</a>
+  </nav>
+  <div class="tk-copy">© 2026 TENKAI CONSULTING</div>
+</div></footer>
 
-<!-- QUESTIONS -->
-<div id="pgQ" class="page">
-  <div class="wrap">
-    <div class="q-scr">
-      <div id="partHdr"></div>
-      <div class="q-prog-row">
-        <div class="q-prog-bg"><div class="q-prog-fg" id="qProgFg"></div></div>
-        <span class="q-prog-lbl" id="qProgLbl"></span>
-      </div>
-      <span id="qTypeTag" class="q-type-tag" style=""></span>
-      <div id="qOpts" style="position:relative"></div>
-      <div class="q-nav">
-        <button class="btn-g" id="prevBtn">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>Anterior
-        </button>
-        <span class="q-hint" id="qHint">Eleg&iacute; una opci&oacute;n para continuar</span>
-        <button class="btn-g" id="nextBtn">
-          Siguiente<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="toast" id="toast"></div>
 
-<!-- RESULTS -->
-<div id="pgRes" class="page">
-  <div class="wrap"><div class="sec">
-    <div class="hero-dark dk">
-      <p class="res-eye">Diagn&oacute;stico de Estilo Profesional &middot; Tenkai Consulting</p>
-      <h2 class="res-name" id="resName"></h2>
-      <p class="res-sub" id="resSub"></p>
-    </div>
-    <p class="sec-lbl">Tu tipo profesional</p>
-    <div class="type-reveal dk">
-      <p class="type-eye">Tu estilo profesional</p>
-      <div class="type-letters" id="typeLetters"></div>
-      <div class="type-name" id="typeName"></div>
-      <div class="dims" id="dimBars"></div>
-    </div>
-    <p class="sec-lbl" style="margin-top:32px">Primeras pistas</p>
-    <div class="teaser dk">
-      <p class="teaser-eye">Caracter&iacute;sticas que suelen aparecer en tu perfil</p>
-      <div class="traits-wrap" id="traitsPills"></div>
-    </div>
-    <div class="cta-dark dk">
-      <h3 class="cta-h">&iquest;Qu&eacute; significa tu tipo?</h3>
-      <p class="cta-p">Descarg&aacute; este PDF y envi&aacute;selo por mail para que puedas recibir a la brevedad tu an&aacute;lisis personalizado.</p>
-      <div class="cta-acts">
-        <button class="btn no-print" id="printBtn">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect width="12" height="8" x="6" y="14"/></svg>
-          Descargar PDF
-        </button>
-        <div class="cta-mail-instr no-print">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Despu&eacute;s adjunt&aacute; el PDF y envi&aacute;lo a <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="294c5a5d4c4b4847695d4c47424840074a464407485b">[email&#160;protected]</a></strong>
-        </div>
-        <div class="cta-mail-print">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          Envi&aacute; este PDF adjunto a <strong><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="adc8ded9c8cfccc3edd9c8c3c6ccc483cec2c083ccdf">[email&#160;protected]</a></strong> para recibir tu an&aacute;lisis completo.
-        </div>
-      </div>
-    </div>
-    <div class="ftr">
-      <img src="data:image/jpeg;base64,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" alt="Tenkai" class="ftr-logo">
-      <div class="ftr-brand">Tenkai</div>
-      <div class="ftr-url">tenkai.com.ar</div>
-      <div class="soc-row">
-        <a href="https://www.linkedin.com/in/toledoesteban/" target="_blank" class="soc-a"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg><span>LinkedIn</span></a>
-        <a href="https://www.instagram.com/esteban.tenkai" target="_blank" class="soc-a"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85 0 3.2-.01 3.58-.07 4.85-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07-3.2 0-3.58-.01-4.85-.07C3.9 21.69 2.31 20.15 2.16 16.85 2.1 15.58 2.1 15.2 2.1 12c0-3.2.01-3.58.07-4.85C2.38 3.9 3.9 2.31 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0-2.16C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12c0 3.26.01 3.67.07 4.95.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24c3.26 0 3.67-.01 4.95-.07 4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95 0-3.26-.01-3.67-.07-4.95C23.73 2.7 21.3.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32A6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg><span>Instagram</span></a>
-        <a href="https://www.tiktok.com/@esteban.tenkai" target="_blank" class="soc-a"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.34 6.34 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.27 8.27 0 0 0 4.84 1.55V6.79a4.85 4.85 0 0 1-1.07-.1z"/></svg><span>TikTok</span></a>
-        <a href="https://www.facebook.com/tenkai.esteban" target="_blank" class="soc-a"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg><span>Facebook</span></a>
-        <a href="https://www.tenkai.com.ar" target="_blank" class="soc-a"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg><span>tenkai.com.ar</span></a>
-      </div>
-      <div class="ftr-copy">&copy; 2026 Tenkai Consulting</div>
-    </div>
-  </div></div>
-</div>
+<script>
+/* ══════════════════════════════════════════════════════════════
+   CONFIGURACIÓN
+   Pegá acá la URL del Web App de Apps Script (ver INSTRUCCIONES.md).
+   ══════════════════════════════════════════════════════════════ */
+var APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwv8ejMbjeQWDKlxM_Vc2GlptJiev6jAzebeQ7hrOl4g1Bfzvwm1agdSd_10y28BFw/exec';
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-document.addEventListener('DOMContentLoaded', function(){
+/* ── DATOS ─────────────────────────────────────────────────── */
+var D = {"QS":[{"id":1,"p":1,"q":"Cuando vas a algún lugar para pasar el día, ¿qué hacés?","a":"Planificás qué vas a hacer y cuándo","b":"Simplemente vas y ves qué pasa"},{"id":2,"p":1,"q":"¿Cómo te describirías?","a":"Una persona espontánea","b":"Una persona organizada"},{"id":3,"p":1,"q":"Si fueras docente, preferirías dar...","a":"Talleres sobre hechos y prácticas concretas","b":"Cursos sobre teorías e ideas"},{"id":4,"p":1,"q":"En situaciones sociales, ¿qué pasa más seguido?","a":"Me mezclo bien con todos desde el principio","b":"Primero paso inadvertido y luego me integro"},{"id":5,"p":1,"q":"¿Con qué tipo de personas te llevás mejor?","a":"Las que tienen una visión imaginativa del mundo","b":"Las que tienen los pies en la tierra"},{"id":6,"p":1,"q":"¿Qué domina más en vos habitualmente?","a":"Los sentimientos","b":"El razonamiento"},{"id":7,"p":1,"q":"¿Cómo preferís hacer las cosas?","a":"Espontáneamente, sin plan previo","b":"Siguiendo un plan que definiste antes"},{"id":8,"p":1,"q":"¿Cómo dirías que sos?","a":"Fácil de llegar a conocer","b":"Difícil de llegar a conocer"},{"id":9,"p":1,"q":"Seguir un itinerario fijo...","a":"Te resulta atractivo y cómodo","b":"Te limita y te incomoda"},{"id":10,"p":1,"q":"Cuando tenés que hacer algo especial, ¿qué hacés?","a":"Lo organizás detenidamente antes de empezar","b":"Averiguás lo necesario a medida que avanzás"},{"id":11,"p":1,"q":"En general, preferís...","a":"Cambiar los planes sin problema cuando algo surge","b":"Seguir el plan que te organizaste"},{"id":12,"p":1,"q":"La mayoría de las personas te describirían como...","a":"Una persona privada","b":"Una persona muy abierta"},{"id":13,"p":1,"q":"Preferirías que te consideraran...","a":"Una persona práctica","b":"Una persona ingeniosa"},{"id":14,"p":1,"q":"En un grupo grande, ¿qué suele pasar?","a":"Que yo presento a los demás","b":"Que me presentan a mí"},{"id":15,"p":1,"q":"Preferís tener como amigo o amiga a alguien que...","a":"Siempre tiene nuevas ideas","b":"Siempre tiene los pies en la tierra"},{"id":16,"p":1,"q":"Cuando tenés que tomar una decisión importante, ¿qué pesás más?","a":"El sentimiento por sobre la lógica","b":"La lógica por sobre el sentimiento"},{"id":17,"p":1,"q":"A la hora de organizar tu tiempo, ¿qué hacés más seguido?","a":"Esperás a ver qué pasa y luego hacés planes","b":"Planificás con bastante anticipación"},{"id":18,"p":1,"q":"¿Dónde recargás energía más fácilmente?","a":"En soledad o con pocas personas","b":"En compañía de mucha gente"},{"id":19,"p":1,"q":"Cuando estás con mucha gente...","a":"Eso te genera energía","b":"Te puede dejar sin energía"},{"id":20,"p":1,"q":"¿Cómo preferís organizarte?","a":"Fijando fechas y actividades con anticipación","b":"Sintiendo libertad para decidir en el momento"},{"id":21,"p":1,"q":"A la hora de planificar un viaje, preferís...","a":"Hacer lo que mejor parezca cada día","b":"Saber de antemano qué vas a hacer la mayoría de los días"},{"id":22,"p":1,"q":"En fiestas y reuniones sociales...","a":"A veces te aburís o te saturás","b":"Casi siempre te divertís y recargás"},{"id":23,"p":1,"q":"En tus actividades cotidianas, ¿qué predomina?","a":"Buscar contacto y conversar con otros","b":"Estar bien sin necesitar hablar con mucha gente"},{"id":24,"p":1,"q":"¿Qué te atrae más en una persona?","a":"Una mente rápida y brillante","b":"Mucho sentido común y practicidad"},{"id":25,"p":1,"q":"En el trabajo diario, preferís...","a":"La urgencia que te hace trabajar contra el reloj","b":"Planificar para no tener que trabajar bajo presión"},{"id":26,"p":1,"q":"¿Cuánto tiempo necesitás para que los demás te conozcan bien?","a":"Bastante tiempo","b":"Poco tiempo"},{"id":27,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Privado","b":"Abierto"},{"id":28,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Programado","b":"Espontáneo"},{"id":29,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Abstracto","b":"Sólido"},{"id":30,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Apacible","b":"Firme"},{"id":31,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Pensamiento","b":"Sentimiento"},{"id":32,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Hechos","b":"Ideas"},{"id":33,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Impulso","b":"Decisión"},{"id":34,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Enérgico","b":"Tranquilo"},{"id":35,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Tranquilo","b":"Sociable"},{"id":36,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Sistemático","b":"Informal"},{"id":37,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Teoría","b":"Certeza"},{"id":38,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Sensible","b":"Justo"},{"id":39,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Convincente","b":"Conmovedor"},{"id":40,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Declaración","b":"Concepto"},{"id":41,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Sin restricciones","b":"Programado"},{"id":42,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Reservado","b":"Expansivo"},{"id":43,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Estructurado","b":"Dinámico"},{"id":44,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Idea","b":"Realidad"},{"id":45,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Compasión","b":"Previsión"},{"id":46,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Beneficios","b":"Bendiciones"},{"id":47,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Sensato","b":"Teórico"},{"id":48,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Pocos amigos cercanos","b":"Muchos amigos"},{"id":49,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Sistemático","b":"Espontáneo"},{"id":50,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Imaginativo","b":"Concreto"},{"id":51,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Cálido","b":"Objetivo"},{"id":52,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Objetivo","b":"Apasionado"},{"id":53,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Construir","b":"Inventar"},{"id":54,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Individual","b":"Grupal"},{"id":55,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Teoría","b":"Hecho"},{"id":56,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Compasivo","b":"Lógico"},{"id":57,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Analítico","b":"Sentimental"},{"id":58,"p":2,"q":"¿Cuál de estas palabras te atrae más?","a":"Sensato","b":"Fascinante"},{"id":59,"p":3,"q":"Cuando empieza un proyecto importante con entrega en una semana, ¿qué hacés primero?","a":"Te tomás un tiempo para listar todo lo que necesitás","b":"Te lanzás y organizás sobre la marcha"},{"id":60,"p":3,"q":"En situaciones sociales, generalmente...","a":"Te cuesta empezar conversación con personas nuevas","b":"Podés hablar con la mayoría de las personas fácilmente"},{"id":61,"p":3,"q":"Cuando hacés algo que muchos otros también hacen, ¿qué preferís?","a":"Hacerlo de la manera convencional que funciona","b":"Inventar y probar tu propio método"},{"id":62,"p":3,"q":"¿Cuándo identificás lo que le interesa a alguien que recién conocés?","a":"Casi de inmediato","b":"Gradualmente, a medida que pasa el tiempo"},{"id":63,"p":3,"q":"Preferís cursos que enseñen...","a":"Conceptos y principios","b":"Prácticas y talleres concretos"},{"id":64,"p":3,"q":"¿Cuál sería el mayor cumplido que te pueden hacer?","a":"Que te llamen una persona de mucho sentimiento","b":"Que te llamen una persona siempre razonable"},{"id":65,"p":3,"q":"¿Cómo ves seguir un plan?","a":"Es necesario a veces, pero generalmente no es lo más favorable","b":"Ayuda mucho y la mayoría de las veces vale la pena"},{"id":66,"p":3,"q":"Cuando estás en un grupo, preferís...","a":"Hablar con las personas que ya conocés bien","b":"Participar en la discusión aunque no conozcas a todos"},{"id":67,"p":3,"q":"En fiestas y reuniones grupales, ¿qué hacés más?","a":"Hablás bastante con mucha gente","b":"Escuchás más y dejás que los demás hablen"},{"id":68,"p":3,"q":"La idea de hacer una lista de cosas para el fin de semana...","a":"Te parece atractiva y útil","b":"No te parece nada atractiva"},{"id":69,"p":3,"q":"¿Qué sería un cumplido mayor para vos?","a":"Que te llamen una persona competente","b":"Que te llamen una persona compasiva"},{"id":70,"p":3,"q":"¿Cómo preferís manejar tus compromisos?","a":"Organizándolos con anticipación","b":"Sintiéndote libre de hacer las cosas de improviso"},{"id":71,"p":3,"q":"Cuando trabajás en un proyecto importante, ¿hacia qué te inclinás?","a":"Calcular lo necesario a medida que avanzás","b":"Empezar analizando todos los pasos por adelantado"},{"id":72,"p":3,"q":"¿Con quiénes podés mantener una conversación larga?","a":"Solo con personas que comparten tus intereses","b":"Con casi cualquier persona"},{"id":73,"p":3,"q":"¿Qué preferís habitualmente?","a":"Apoyar las maneras ya establecidas para hacer bien las cosas","b":"Analizar lo que está mal y atacar los problemas no resueltos"},{"id":74,"p":3,"q":"Cuando leés algo en el trabajo, ¿qué preferís?","a":"Un estilo de expresión original o poco convencional","b":"Que el autor diga las cosas exactamente como las piensa"},{"id":75,"p":3,"q":"Preferirías tener como jefe o jefa a una persona...","a":"Cálida pero a veces inconstante","b":"Directa pero siempre lógica"},{"id":76,"p":3,"q":"¿Cómo preferís realizar la mayoría de las cosas?","a":"Según lo que te parece mejor ese día","b":"Siguiendo un plan preestablecido"},{"id":77,"p":3,"q":"¿Podés hablar fácilmente con cualquier persona?","a":"Sí, con cualquier persona durante el tiempo que haga falta","b":"Solo con ciertas personas o en ciertas circunstancias"},{"id":78,"p":3,"q":"Cuando tomás una decisión, ¿qué es más importante?","a":"Analizar los hechos objetivamente","b":"Considerar los sentimientos y opiniones de las personas"},{"id":79,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Imaginación","b":"Realismo"},{"id":80,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Generosidad","b":"Convicción"},{"id":81,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Equidad","b":"Afecto"},{"id":82,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Producción","b":"Diseño"},{"id":83,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Posibilidades","b":"Certezas"},{"id":84,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Ternura","b":"Determinación"},{"id":85,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Practicidad","b":"Sentimiento"},{"id":86,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Hacer","b":"Crear"},{"id":87,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Algo novedoso","b":"Algo conocido"},{"id":88,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Compadecerse","b":"Analizar"},{"id":89,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Terquedad","b":"Ternura"},{"id":90,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Concreción","b":"Abstracción"},{"id":91,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Fidelidad","b":"Determinación"},{"id":92,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Competencia","b":"Buen corazón"},{"id":93,"p":4,"q":"¿Cuál de estas palabras te atrae más?","a":"Practicidad","b":"Innovación"}],"KEY":{"1":["JP","J"],"2":["JP","P"],"3":["SN","S"],"4":["EI","E"],"5":["SN","N"],"6":["TF","F"],"7":["JP","P"],"8":["EI","E"],"9":["JP","J"],"10":["JP","J"],"11":["JP","P"],"12":["EI","I"],"13":["SN","S"],"14":["EI","E"],"15":["SN","N"],"16":["TF","F"],"17":["JP","P"],"18":["EI","I"],"19":["EI","E"],"20":["JP","J"],"21":["JP","P"],"22":["EI","I"],"23":["EI","E"],"24":["SN","N"],"25":["JP","P"],"26":["EI","I"],"27":["EI","I"],"28":["JP","J"],"29":["SN","N"],"30":["TF","F"],"31":["TF","T"],"32":["SN","S"],"33":["JP","P"],"34":["EI","E"],"35":["EI","I"],"36":["JP","J"],"37":["SN","N"],"38":["TF","F"],"39":["TF","T"],"40":["SN","S"],"41":["JP","P"],"42":["EI","I"],"43":["JP","J"],"44":["SN","N"],"45":["TF","F"],"46":["TF","T"],"47":["SN","S"],"48":["EI","I"],"49":["JP","J"],"50":["SN","N"],"51":["TF","F"],"52":["TF","T"],"53":["SN","S"],"54":["EI","I"],"55":["SN","N"],"56":["TF","F"],"57":["TF","T"],"58":["SN","S"],"59":["JP","J"],"60":["EI","I"],"61":["SN","S"],"62":["EI","E"],"63":["SN","N"],"64":["TF","F"],"65":["JP","P"],"66":["EI","I"],"67":["EI","E"],"68":["JP","J"],"69":["TF","T"],"70":["JP","J"],"71":["JP","P"],"72":["EI","I"],"73":["SN","S"],"74":["SN","N"],"75":["TF","F"],"76":["JP","P"],"77":["EI","E"],"78":["TF","T"],"79":["SN","N"],"80":["TF","F"],"81":["TF","T"],"82":["SN","S"],"83":["SN","N"],"84":["TF","F"],"85":["TF","T"],"86":["SN","S"],"87":["SN","N"],"88":["TF","F"],"89":["TF","T"],"90":["SN","S"],"91":["TF","F"],"92":["TF","T"],"93":["SN","S"]},"TYPES":{"ISTJ":{"traits":["Metodología","Confiabilidad","Atención al detalle","Responsabilidad","Reserva"],"d":"Tendés a trabajar con método, a cumplir lo que te comprometés a hacer y a cuidar los detalles que otras personas pasan por alto."},"ISFJ":{"traits":["Lealtad","Cuidado","Paciencia","Observación","Servicio"],"d":"Te mueve cuidar a las personas y sostener lo que funciona, con constancia y mucha atención a lo que cada quien necesita."},"INFJ":{"traits":["Empatía","Visión de futuro","Reflexión","Compromiso","Privacidad"],"d":"Combinás sensibilidad hacia las personas con una mirada de largo plazo, y buscás que lo que hacés tenga sentido."},"INTJ":{"traits":["Pensamiento estratégico","Independencia","Análisis","Exigencia","Reserva"],"d":"Pensás en estrategia: ves el panorama completo, definís un rumbo y lo seguís con independencia y exigencia."},"ISTP":{"traits":["Practicidad","Curiosidad","Adaptabilidad","Autonomía","Observación"],"d":"Resolvés con practicidad: observás, entendés cómo funcionan las cosas y actuás con eficacia cuando hace falta."},"ISFP":{"traits":["Sensibilidad","Espontaneidad","Lealtad","Presencia","Discreción"],"d":"Valorás la autenticidad y la sensibilidad, y preferís que tu trabajo hable por vos con discreción y coherencia."},"INFP":{"traits":["Creatividad","Empatía","Autenticidad","Introspección","Flexibilidad"],"d":"Te guían tus valores y tu creatividad: buscás trabajar en algo con propósito, donde puedas actuar de acuerdo con lo que valorás."},"INTP":{"traits":["Lógica","Curiosidad","Independencia","Análisis","Reserva"],"d":"Te atrae entender cómo funcionan las ideas y los sistemas, y analizás con lógica y curiosidad antes de decidir."},"ESTP":{"traits":["Acción","Energía","Adaptabilidad","Practicidad","Sociabilidad"],"d":"Actuás rápido y con los pies en la tierra: te sentís a gusto resolviendo en el momento y poniendo en movimiento a otras personas."},"ESFP":{"traits":["Entusiasmo","Espontaneidad","Generosidad","Sociabilidad","Presencia"],"d":"Aportás energía, presencia y calidez, y disfrutás de trabajar con otras personas y de estar en el centro de lo que pasa."},"ENFP":{"traits":["Creatividad","Entusiasmo","Curiosidad","Empatía","Versatilidad"],"d":"Generás ideas, conectás con las personas y te entusiasmás con las posibilidades, y la variedad te mantiene en movimiento."},"ENTP":{"traits":["Ingenio","Pensamiento estratégico","Debate","Curiosidad","Adaptabilidad"],"d":"Te gusta debatir, cuestionar lo establecido y encontrar caminos nuevos, con ingenio y agilidad mental."},"ESTJ":{"traits":["Organización","Dirección","Decisión","Confiabilidad","Practicidad"],"d":"Organizás, decidís y lográs que las cosas se cumplan, y valorás el orden, la claridad y la responsabilidad."},"ESFJ":{"traits":["Calidez","Organización","Lealtad","Sociabilidad","Compromiso"],"d":"Cuidás los vínculos y la organización del equipo, y trabajás con calidez, compromiso y atención a lo que otras personas necesitan."},"ENFJ":{"traits":["Carisma","Empatía","Organización","Inspiración","Sociabilidad"],"d":"Inspirás y guiás a otras personas, y combinás empatía con capacidad de organizar para sacar lo mejor de cada equipo."},"ENTJ":{"traits":["Liderazgo","Pensamiento estratégico","Decisión","Ambición","Dirección"],"d":"Liderás con visión y decisión, y te ordena pensar en objetivos, en estrategia y en cómo llegar a ellos de forma eficiente."}},"DIMS":[{"k":"EI","l":"E","r":"I","ln":"Extroversión","rn":"Introversión","t":"Dónde ponés tu energía"},{"k":"SN","l":"S","r":"N","ln":"Sensación","rn":"Intuición","t":"Cómo tomás información"},{"k":"TF","l":"T","r":"F","ln":"Pensamiento","rn":"Sentimiento","t":"Cómo tomás decisiones"},{"k":"JP","l":"J","r":"P","ln":"Juicio","rn":"Percepción","t":"Cómo organizás tu mundo"}],"CHAPTERS":[{"short":"Día a día","title":"Cómo sos en el día a día","desc":"Situaciones cotidianas.","tipLead":"","tip":""},{"short":"Primera reacción","title":"Ahora, a primera vista","desc":"Vas a ver pares de palabras. Ninguna es mejor que la otra: elegí la que más te resuena, sin darle demasiadas vueltas.","tipLead":"Tip.","tip":"Confiá en tu primera reacción. Suele ser la más honesta."},{"short":"En el trabajo","title":"Ahora, en el trabajo","desc":"Vuelven las situaciones, pero esta vez en el terreno laboral. Pensá en cómo te movés de verdad, no en cómo te gustaría moverte.","tipLead":"Recordá.","tip":"No hay un estilo mejor que otro: cada perfil tiene fortalezas propias en el trabajo."},{"short":"Último tramo","title":"Último tramo","desc":"Quedan 15 preguntas. Algunas te piden elegir entre dos palabras y otras, ubicarte entre dos polos.","tipLead":"Ya casi.","tip":"En unos minutos vas a ver tu primer pantallazo."}],"DEFS":{"Privado":"Que reserva su vida interior y no la comparte fácilmente con otros.","Abierto":"Que comparte sus pensamientos y emociones con facilidad y naturalidad.","Programado":"Que prefiere seguir un orden o plan establecido con anticipación.","Espontáneo":"Que actúa según el momento, sin necesidad de planificar.","Abstracto":"Que prefiere ideas, conceptos y teorías por sobre datos concretos.","Sólido":"Que valora lo concreto, verificable y con base en la realidad.","Apacible":"Que toma decisiones con consideración hacia los demás y el entorno.","Firme":"Que decide con convicción y mantiene su postura con seguridad.","Pensamiento":"Orientación hacia el análisis lógico y la objetividad.","Sentimiento":"Orientación hacia los valores personales y el impacto en las personas.","Hechos":"Preferencia por datos verificables y experiencias concretas.","Ideas":"Preferencia por posibilidades, patrones y conceptos originales.","Impulso":"Tendencia a actuar rápido, adaptarse y dejar las opciones abiertas.","Decisión":"Tendencia a cerrar temas, planificar y llegar a conclusiones.","Enérgico":"Que se activa y recarga en contacto con el mundo exterior.","Tranquilo":"Que conserva energía en ambientes con poca estimulación externa.","Sistemático":"Que organiza su trabajo y vida según métodos y estructuras definidas.","Informal":"Que prefiere ambientes flexibles, sin protocolos rígidos.","Teoría":"Interés por principios generales y explicaciones conceptuales.","Certeza":"Interés por respuestas verificables y situaciones predecibles.","Sensible":"Que pondera las emociones y el contexto humano en sus decisiones.","Justo":"Que aplica criterios objetivos e imparciales al tomar decisiones.","Convincente":"Que persuade a través de argumentos lógicos y racionales.","Conmovedor":"Que mueve a otros a través de la empatía y la conexión emocional.","Declaración":"Preferencia por afirmaciones directas y conclusiones claras.","Concepto":"Preferencia por ideas abiertas y marcos de pensamiento amplios.","Sin restricciones":"Necesidad de libertad para explorar sin límites preestablecidos.","Reservado":"Que comparte poco de sí mismo hasta conocer bien a los demás.","Expansivo":"Que se expresa con amplitud y abre su mundo a quienes lo rodean.","Estructurado":"Que trabaja mejor dentro de un marco claro y predecible.","Dinámico":"Que prospera en entornos cambiantes y busca variedad constante.","Idea":"Valoración de la originalidad, la imaginación y lo nuevo.","Realidad":"Valoración de lo práctico, lo tangible y lo que ya funciona.","Compasión":"Capacidad de conectar con el sufrimiento ajeno y responder con cuidado.","Previsión":"Capacidad de anticipar consecuencias y planificar con lógica.","Beneficios":"Orientación hacia resultados prácticos y ventajas concretas.","Bendiciones":"Orientación hacia la gratitud y los valores más allá de lo material.","Sensato":"Que actúa con equilibrio, prudencia y sentido común.","Teórico":"Que prefiere explorar ideas y modelos conceptuales.","Imaginativo":"Que genera ideas originales y ve posibilidades donde otros no las ven.","Concreto":"Que piensa en términos de hechos, pasos y resultados prácticos.","Cálido":"Que transmite afecto y consideración en sus vínculos.","Objetivo":"Que evalúa situaciones sin dejarse influir por emociones.","Apasionado":"Que se involucra con intensidad emocional en lo que le importa.","Construir":"Preferencia por crear desde bases sólidas y probadas.","Inventar":"Preferencia por crear algo nuevo desde la imaginación.","Individual":"Preferencia por trabajar de forma autónoma y a tu propio ritmo.","Grupal":"Preferencia por colaborar y construir junto a otras personas.","Compadecerse":"Responder al dolor ajeno con empatía y disposición a ayudar.","Analizar":"Responder a los problemas descomponiéndolos con lógica y precisión.","Sentimental":"Que da peso a las emociones al evaluar situaciones o personas.","Analítico":"Que descompone la información para entenderla desde la lógica.","Fascinante":"Que atrae por su novedad, originalidad o carácter sorprendente.","Muchos amigos":"Preferencia por tener una red social amplia y variada.","Pocos amigos cercanos":"Preferencia por vínculos profundos con un grupo pequeño.","Compasivo":"Que se conmueve ante lo que les pasa a otras personas y busca aliviarlo.","Sociable":"Que disfruta del trato con otras personas y lo busca con naturalidad.","Lógico":"Que razona con orden y llega a conclusiones a partir de la evidencia.","Hecho":"Preferencia por lo concreto y verificable, por lo que efectivamente ocurrió."},"SCEN":{"59":"Empezás un proyecto con entrega en una semana. El equipo recién arranca y hay mucho por definir.","60":"Estás en un evento con personas que no conocés.","61":"Tenés que hacer algo que mucha gente también hace, una tarea cotidiana.","62":"Recién conocés a alguien en un contexto laboral.","63":"Tenés que elegir entre dos formatos de capacitación.","64":"Alguien del equipo te hace un comentario positivo sobre cómo trabajaste.","65":"Tenés que decidir cómo organizar una serie de tareas importantes.","66":"Estás en un grupo de trabajo o reunión.","67":"Estás en una fiesta o reunión social con conocidos.","68":"Pensás en cómo organizar el fin de semana.","69":"Alguien te describe con una sola palabra frente a otros.","70":"Tenés varios compromisos por delante esta semana.","71":"Estás trabajando en un proyecto que importa.","72":"Tenés una tarde libre y aparece la oportunidad de charlar.","73":"Tu equipo te pregunta cómo preferís abordar algo que ya funciona.","74":"Estás leyendo un informe o artículo largo para el trabajo.","75":"Tenés que elegir con quién trabajar de forma cercana.","76":"Tenés varias tareas que hacer durante el día.","77":"Te encontrás en un ascensor con alguien que no conocés.","78":"Tenés que tomar una decisión que afecta a tu equipo."},"POLES":{"79":"¿Qué te atrae más?","80":"¿Qué te define más?","81":"¿Con cuál te identificás?","82":"¿Qué te motiva más?","83":"¿Qué preferís?","84":"¿Qué te resuena más?","85":"¿Qué te describe?","86":"¿Qué preferís?","87":"¿Qué te atrae más?","88":"¿Qué te sale naturalmente?","89":"¿Con cuál te identificás más?","90":"¿Qué preferís?","91":"¿Qué te describe mejor?","92":"¿Qué valorás más?","93":"¿Qué te atrae?"}};
+var QS = D.QS, KEY = D.KEY, TYPES = D.TYPES, DIMS = D.DIMS, CHAPTERS = D.CHAPTERS, DEFS = D.DEFS, SCEN = D.SCEN, POLES = D.POLES;
+var TOTAL = QS.length;
+var LS_KEY = 'tenkai_mbti_v2';
+var STEMS = ['¿Cuál te representa más?', '¿Con cuál te quedás?', '¿Cuál te suena más a vos?', '¿Cuál elegirías primero?'];
+var STR_LAB = ['', 'Algo más', 'Bastante', 'Claramente'];
+var FMT_NAME = {duel:'Duelo', stack:'Dos caminos', scale:'Balanza', chips:'Palabras', vs:'Cara a cara', flip:'Tarjeta', scn:'Escenario', scnScale:'Escenario', scnDuel:'Escenario'};
+var ASK = {
+  duel:'Elegí la opción que más se parece a vos.',
+  stack:'Elegí la opción que más se parece a vos.',
+  scn:'Elegí lo que harías o sentirías de verdad.',
+  chips:'Tocá la palabra con la que más te identificás.',
+  vs:'Tocá la palabra con la que más te identificás.',
+  flip:'Tocá la tarjeta para ver el significado y después elegí.',
+  scale:'Movelo hacia el lado con el que más te identificás.',
+  scnScale:'Movelo hacia el lado con el que más te identificás.',
+  scnDuel:'Elegí lo que harías o sentirías de verdad.'
+};
 
-var KEY={"1":["JP","J"],"2":["JP","P"],"3":["SN","S"],"4":["EI","E"],"5":["SN","N"],"6":["TF","F"],"7":["JP","P"],"8":["EI","E"],"9":["JP","J"],"10":["JP","J"],"11":["JP","P"],"12":["EI","I"],"13":["SN","S"],"14":["EI","E"],"15":["SN","N"],"16":["TF","F"],"17":["JP","P"],"18":["EI","I"],"19":["EI","E"],"20":["JP","J"],"21":["JP","P"],"22":["EI","I"],"23":["EI","E"],"24":["SN","N"],"25":["JP","P"],"26":["EI","I"],"27":["EI","I"],"28":["JP","J"],"29":["SN","N"],"30":["TF","F"],"31":["TF","T"],"32":["SN","S"],"33":["JP","P"],"34":["EI","E"],"35":["EI","I"],"36":["JP","J"],"37":["SN","N"],"38":["TF","F"],"39":["TF","T"],"40":["SN","S"],"41":["JP","P"],"42":["EI","I"],"43":["JP","J"],"44":["SN","N"],"45":["TF","F"],"46":["TF","T"],"47":["SN","S"],"48":["EI","I"],"49":["JP","J"],"50":["SN","N"],"51":["TF","F"],"52":["TF","T"],"53":["SN","S"],"54":["EI","I"],"55":["SN","N"],"56":["TF","F"],"57":["TF","T"],"58":["SN","S"],"59":["JP","J"],"60":["EI","I"],"61":["SN","S"],"62":["EI","E"],"63":["SN","N"],"64":["TF","F"],"65":["JP","P"],"66":["EI","I"],"67":["EI","E"],"68":["JP","J"],"69":["TF","T"],"70":["JP","J"],"71":["JP","P"],"72":["EI","I"],"73":["SN","S"],"74":["SN","N"],"75":["TF","F"],"76":["JP","P"],"77":["EI","E"],"78":["TF","T"],"79":["SN","N"],"80":["TF","F"],"81":["TF","T"],"82":["SN","S"],"83":["SN","N"],"84":["TF","F"],"85":["TF","T"],"86":["SN","S"],"87":["SN","N"],"88":["TF","F"],"89":["TF","T"],"90":["SN","S"],"91":["TF","F"],"92":["TF","T"],"93":["SN","S"]};
+/* Primer índice de cada capítulo (para rotar formatos dentro de cada uno) */
+var CH_START = {};
+QS.forEach(function(q, i){ if (CH_START[q.p] === undefined) CH_START[q.p] = i; });
 
-var TRANS=[
-  {
-    part:2, badge:"Parte II de IV",
-    count:"26", countLbl:"preguntas completadas",
-    title:"Muy bien, seguís adelante",
-    desc:"Ahora vas a ver pares de palabras. Ninguna es mejor que la otra: elegí la que te resuena más, rápido y sin pensar demasiado.",
-    tip:"<strong>Tip:</strong> En esta sección confiá en tu primera reacción. La respuesta instantánea suele ser la más honesta."
-  },
-  {
-    part:3, badge:"Parte III de IV",
-    count:"58", countLbl:"preguntas completadas",
-    title:"Más de la mitad, excelente",
-    desc:"De vuelta al formato de situaciones. Pensá en cómo te movés en el día a día laboral, no en cómo te gustaría moverte.",
-    tip:"<strong>Recordatorio:</strong> No hay tipo mejor ni peor. Cada perfil tiene fortalezas genuinas en el contexto profesional."
-  },
-  {
-    part:4, badge:"Parte IV de IV",
-    count:"78", countLbl:"preguntas completadas",
-    title:"Última parte, ya casi terminás",
-    desc:"Una última ronda de palabras. Quedan solo 15 preguntas para tener tu diagnóstico completo.",
-    tip:"<strong>Casi listo:</strong> Tu perfil MBTI va tomando forma. En unos minutos vas a ver el resultado."
+function freshState(){
+  return {nombre:'', apellido:'', email:'', sid:'', ans:{}, st:{}, q:0, seen:{}, started:0, done:false, sent:false, minutos:0};
+}
+var state = freshState();
+var view = 'intro';
+var sending = false;
+var chapNow = 0;
+var sendErr = '';
+var advTimer = null;
+
+/* ── UTILIDADES ────────────────────────────────────────────── */
+function $(id){ return document.getElementById(id); }
+function esc(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function save(){ try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch(e){} }
+function load(){
+  try {
+    var d = localStorage.getItem(LS_KEY);
+    if (d) {
+      var o = JSON.parse(d), f = freshState();
+      Object.keys(f).forEach(function(k){ if (o[k] !== undefined && typeof o[k] === typeof f[k]) f[k] = o[k]; });
+      state = f;
+    }
+  } catch(e){ state = freshState(); }
+}
+function toast(msg, dur){ var t = $('toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(function(){ t.classList.remove('show'); }, dur || 2800); }
+function validEmail(e){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test((e || '').trim()); }
+function newSid(){ return 'M' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
+function answeredCount(){ return Object.keys(state.ans).length; }
+function isWordQ(q){ return q.p === 2 || q.p === 4; }
+
+/* Formato de cada pregunta: rota dentro del capítulo para que no haya dos seguidas iguales */
+function fmtOf(i){
+  var q = QS[i], k = i - CH_START[q.p];
+  if (q.p === 1) return ['duel', 'stack', 'scale'][k % 3];
+  if (q.p === 2) return ['chips', 'vs', 'flip', 'scale'][k % 4];
+  if (q.p === 3) return ['scn', 'scnScale', 'scnDuel'][k % 3];
+  return ['scale', 'vs', 'scale', 'chips'][k % 4];
+}
+function stemOf(i){
+  var q = QS[i];
+  if (POLES[q.id]) return POLES[q.id];
+  if (q.q === '¿Cuál de estas palabras te atrae más?') return STEMS[i % STEMS.length];
+  return q.q;
+}
+
+/* ── PUNTAJE (misma lógica que el test original) ───────────── */
+function calc(ans){
+  var c = {E:0, I:0, S:0, N:0, T:0, F:0, J:0, P:0};
+  var pairs = {EI:['E','I'], SN:['S','N'], TF:['T','F'], JP:['J','P']};
+  Object.keys(ans).forEach(function(id){
+    var e = KEY[id]; if (!e) return;
+    var pr = pairs[e[0]], poleA = e[1], poleB = pr[0] === poleA ? pr[1] : pr[0];
+    c[ans[id] === 'A' ? poleA : poleB]++;
+  });
+  /* Empate: gana el polo de la derecha (I, N, F, P), igual que en el Gem */
+  var type = (c.E > c.I ? 'E' : 'I') + (c.S > c.N ? 'S' : 'N') + (c.T > c.F ? 'T' : 'F') + (c.J > c.P ? 'J' : 'P');
+  return {c:c, type:type};
+}
+
+/* ── PANTALLAS ─────────────────────────────────────────────── */
+function setHeader(){
+  var bar = $('progBar');
+  if (view === 'q') {
+    bar.classList.remove('hidden');
+    $('progFill').style.width = Math.round(state.q / TOTAL * 100) + '%';
+    $('progTxt').textContent = (state.q + 1) + ' / ' + TOTAL;
+  } else if (view === 'chap') {
+    bar.classList.remove('hidden');
+    $('progFill').style.width = Math.round(answeredCount() / TOTAL * 100) + '%';
+    $('progTxt').textContent = answeredCount() + ' / ' + TOTAL;
+  } else if (view === 'result') {
+    bar.classList.remove('hidden'); $('progFill').style.width = '100%'; $('progTxt').textContent = 'Enviada';
+  } else {
+    bar.classList.add('hidden'); $('progTxt').textContent = 'Evaluación';
   }
-];
-
-var QS=[
-  {id:1,p:1,w:0,q:"Cuando vas a algún lugar para pasar el día, ¿qué hacés?",a:"Planificás qué vas a hacer y cuándo",b:"Simplemente vas y ves qué pasa"},
-  {id:2,p:1,w:0,q:"¿Cómo te describirías?",a:"Una persona espontánea",b:"Una persona organizada"},
-  {id:3,p:1,w:0,q:"Si fueras docente, preferirías dar...",a:"Talleres sobre hechos y prácticas concretas",b:"Cursos sobre teorías e ideas"},
-  {id:4,p:1,w:0,q:"En situaciones sociales, ¿qué pasa más seguido?",a:"Me mezclo bien con todos desde el principio",b:"Primero paso inadvertido y luego me integro"},
-  {id:5,p:1,w:0,q:"¿Con qué tipo de personas te llevás mejor?",a:"Las que tienen una visión imaginativa del mundo",b:"Las que tienen los pies en la tierra"},
-  {id:6,p:1,w:0,q:"¿Qué domina más en vos habitualmente?",a:"Los sentimientos",b:"El razonamiento"},
-  {id:7,p:1,w:0,q:"¿Cómo preferís hacer las cosas?",a:"Espontáneamente, sin plan previo",b:"Siguiendo un plan que definíste antes"},
-  {id:8,p:1,w:0,q:"¿Cómo dirías que sos?",a:"Fácil de llegar a conocer",b:"Difícil de llegar a conocer"},
-  {id:9,p:1,w:0,q:"Seguir un itinerario fijo...",a:"Te resulta atractivo y cómodo",b:"Te limita y te incomoda"},
-  {id:10,p:1,w:0,q:"Cuando tenés que hacer algo especial, ¿qué hacés?",a:"Lo organizás detenidamente antes de empezar",b:"Averigüas lo necesario a medida que avancés"},
-  {id:11,p:1,w:0,q:"En general, preferís...",a:"Cambiar los planes sin problema cuando algo surge",b:"Seguir el plan que te organizaste"},
-  {id:12,p:1,w:0,q:"La mayoría de las personas te describirían como...",a:"Una persona privada",b:"Una persona muy abierta"},
-  {id:13,p:1,w:0,q:"Preferirías que te consideraran...",a:"Una persona práctica",b:"Una persona ingeniosa"},
-  {id:14,p:1,w:0,q:"En un grupo grande, ¿qué suele pasar?",a:"Que yo presento a los demás",b:"Que me presentan a mí"},
-  {id:15,p:1,w:0,q:"Preferís tener como amigo o amiga a alguien que...",a:"Siempre tiene nuevas ideas",b:"Siempre tiene los pies en la tierra"},
-  {id:16,p:1,w:0,q:"Cuando tenés que tomar una decisión importante, ¿qué pesás más?",a:"El sentimiento por sobre la lógica",b:"La lógica por sobre el sentimiento"},
-  {id:17,p:1,w:0,q:"A la hora de organizar tu tiempo, ¿qué hacés más seguido?",a:"Esperás a ver qué pasa y luego hacés planes",b:"Planificás con bastante anticipación"},
-  {id:18,p:1,w:0,q:"¿Dónde recargás energía más fácilmente?",a:"En soledad o con pocas personas",b:"En compañía de mucha gente"},
-  {id:19,p:1,w:0,q:"Cuando estás con mucha gente...",a:"Eso te genera energía",b:"Podés sentirte agotado"},
-  {id:20,p:1,w:0,q:"¿Cómo preferís organizarte?",a:"Fijando fechas y actividades con anticipación",b:"Sintiendo libertad para decidir en el momento"},
-  {id:21,p:1,w:0,q:"A la hora de planificar un viaje, preferís...",a:"Hacer lo que mejor parezca cada día",b:"Saber de antemano qué vas a hacer la mayoría de los días"},
-  {id:22,p:1,w:0,q:"En fiestas y reuniones sociales...",a:"A veces te aburís o te saturás",b:"Casi siempre te divertís y recargás"},
-  {id:23,p:1,w:0,q:"En tus actividades cotidianas, ¿qué predomina?",a:"Buscar contacto y conversar con otros",b:"Estar bien sin necesitar hablar con mucha gente"},
-  {id:24,p:1,w:0,q:"¿Qué te atrae más en una persona?",a:"Una mente rápida y brillante",b:"Mucho sentido común y practicidad"},
-  {id:25,p:1,w:0,q:"En el trabajo diario, preferís...",a:"La urgencia que te hace trabajar contra el reloj",b:"Planificar para no tener que trabajar bajo presión"},
-  {id:26,p:1,w:0,q:"¿Cuánto tiempo necesitás para que los demás te conozcan bien?",a:"Bastante tiempo",b:"Poco tiempo"},
-  {id:27,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Privado",b:"Abierto"},
-  {id:28,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Programado",b:"Espontáneo"},
-  {id:29,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Abstracto",b:"Sólido"},
-  {id:30,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Apacible",b:"Firme"},
-  {id:31,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Pensamiento",b:"Sentimiento"},
-  {id:32,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Hechos",b:"Ideas"},
-  {id:33,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Impulso",b:"Decisión"},
-  {id:34,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Enérgico",b:"Tranquilo"},
-  {id:35,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Tranquilo",b:"Sociable"},
-  {id:36,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Sistemático",b:"Informal"},
-  {id:37,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Teoría",b:"Certeza"},
-  {id:38,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Sensible",b:"Justo"},
-  {id:39,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Convincente",b:"Conmovedor"},
-  {id:40,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Declaración",b:"Concepto"},
-  {id:41,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Sin restricciones",b:"Programado"},
-  {id:42,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Reservado",b:"Expansivo"},
-  {id:43,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Estructurado",b:"Dinámico"},
-  {id:44,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Idea",b:"Realidad"},
-  {id:45,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Compasión",b:"Previsión"},
-  {id:46,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Beneficios",b:"Bendiciones"},
-  {id:47,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Sensato",b:"Teórico"},
-  {id:48,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Pocos amigos cercanos",b:"Muchos amigos"},
-  {id:49,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Sistemático",b:"Espontáneo"},
-  {id:50,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Imaginativo",b:"Concreto"},
-  {id:51,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Cálido",b:"Objetivo"},
-  {id:52,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Objetivo",b:"Apasionado"},
-  {id:53,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Construir",b:"Inventar"},
-  {id:54,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Individual",b:"Grupal"},
-  {id:55,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Teoría",b:"Hecho"},
-  {id:56,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Compasivo",b:"Lógico"},
-  {id:57,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Analítico",b:"Sentimental"},
-  {id:58,p:2,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Sensato",b:"Fascinante"},
-  {id:59,p:3,w:0,q:"Cuando empieza un proyecto importante con entrega en una semana, ¿qué hacés primero?",a:"Te tomás un tiempo para listar todo lo que necesitás",b:"Te lanzás y organizás sobre la marcha"},
-  {id:60,p:3,w:0,q:"En situaciones sociales, generalmente...",a:"Te cuesta empezar conversación con personas nuevas",b:"Podés hablar con la mayoría de las personas fácilmente"},
-  {id:61,p:3,w:0,q:"Cuando hacés algo que muchos otros también hacen, ¿qué preferís?",a:"Hacerlo de la manera convencional que funciona",b:"Inventar y probar tu propio método"},
-  {id:62,p:3,w:0,q:"¿Cuándo identificás lo que le interesa a alguien que recién conocés?",a:"Casi de inmediato",b:"Gradualmente, a medida que pasa el tiempo"},
-  {id:63,p:3,w:0,q:"Preferís cursos que enseñen...",a:"Conceptos y principios",b:"Prácticas y talleres concretos"},
-  {id:64,p:3,w:0,q:"¿Cuál sería el mayor cumplido que te pueden hacer?",a:"Que te llamen una persona de mucho sentimiento",b:"Que te llamen una persona siempre razonable"},
-  {id:65,p:3,w:0,q:"¿Cómo ves seguir un plan?",a:"Es necesario a veces, pero generalmente no es lo más favorable",b:"Ayuda mucho y la mayoría de las veces vale la pena"},
-  {id:66,p:3,w:0,q:"Cuando estás en un grupo, preferís...",a:"Hablar con las personas que ya conocés bien",b:"Participar en la discusión aunque no conozcas a todos"},
-  {id:67,p:3,w:0,q:"En fiestas y reuniones grupales, ¿qué hacés más?",a:"Hablás bastante con mucha gente",b:"Escuchás más y dejás que los demás hablen"},
-  {id:68,p:3,w:0,q:"La idea de hacer una lista de cosas para el fin de semana...",a:"Te parece atractiva y útil",b:"No te parece nada atractiva"},
-  {id:69,p:3,w:0,q:"¿Qué sería un cumplido mayor para vos?",a:"Que te llamen una persona competente",b:"Que te llamen una persona compasiva"},
-  {id:70,p:3,w:0,q:"¿Cómo preferís manejar tus compromisos?",a:"Organizándolos con anticipación",b:"Sintiéndote libre de hacer las cosas de improviso"},
-  {id:71,p:3,w:0,q:"Cuando trabajás en un proyecto importante, ¿hacia qué te inclinás?",a:"Calcular lo necesario a medida que avancés",b:"Empezar analizando todos los pasos por adelantado"},
-  {id:72,p:3,w:0,q:"¿Con quiénes podés mantener una conversación larga?",a:"Solo con personas que comparten tus intereses",b:"Con casi cualquier persona"},
-  {id:73,p:3,w:0,q:"¿Qué preferís habitualmente?",a:"Apoyar las maneras ya establecidas para hacer bien las cosas",b:"Analizar lo que está mal y atacar los problemas no resueltos"},
-  {id:74,p:3,w:0,q:"Cuando leés algo en el trabajo, ¿qué preferís?",a:"Un estilo de expresión original o poco convencional",b:"Que el autor diga las cosas exactamente como las piensa"},
-  {id:75,p:3,w:0,q:"Preferirías tener como jefe o jefa a una persona...",a:"Cálida pero a veces inconstante",b:"Directa pero siempre lógica"},
-  {id:76,p:3,w:0,q:"¿Cómo preferís realizar la mayoría de las cosas?",a:"Según lo que te parece mejor ese día",b:"Siguiendo un plan preestablecido"},
-  {id:77,p:3,w:0,q:"¿Podés hablar fácilmente con cualquier persona?",a:"Sí, con cualquier persona durante el tiempo que haga falta",b:"Solo con ciertas personas o en ciertas circunstancias"},
-  {id:78,p:3,w:0,q:"Cuando tomás una decisión, ¿qué es más importante?",a:"Analizar los hechos objetivamente",b:"Considerar los sentimientos y opiniones de las personas"},
-  {id:79,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Imaginación",b:"Realismo"},
-  {id:80,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Generosidad",b:"Convicción"},
-  {id:81,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Equidad",b:"Afecto"},
-  {id:82,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Producción",b:"Diseño"},
-  {id:83,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Posibilidades",b:"Certezas"},
-  {id:84,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Ternura",b:"Determinación"},
-  {id:85,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Practicidad",b:"Sentimiento"},
-  {id:86,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Hacer",b:"Crear"},
-  {id:87,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Algo novedoso",b:"Algo conocido"},
-  {id:88,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Compadecerse",b:"Analizar"},
-  {id:89,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Terquedad",b:"Ternura"},
-  {id:90,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Concreción",b:"Abstracción"},
-  {id:91,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Fidelidad",b:"Determinación"},
-  {id:92,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Competencia",b:"Buen corazón"},
-  {id:93,p:4,w:1,q:"¿Cuál de estas palabras te atrae más?",a:"Practicidad",b:"Innovación"}
-];
-
-var TYPES={
-  ISTJ:{name:"Guardián / Guardiana",    traits:["Metodología","Confiabilidad","Atención al detalle","Responsabilidad","Reserva"]},
-  ISFJ:{name:"Protector / Protectora",  traits:["Lealtad","Cuidado","Paciencia","Observación","Servicio"]},
-  INFJ:{name:"Consejero / Consejera",   traits:["Empatía","Visión de futuro","Reflexión","Compromiso","Privacidad"]},
-  INTJ:{name:"Arquitecto / Arquitecta", traits:["Pensamiento estratégico","Independencia","Análisis","Exigencia","Reserva"]},
-  ISTP:{name:"Artesano / Artesana",     traits:["Practicidad","Curiosidad","Adaptabilidad","Dirección","Observación"]},
-  ISFP:{name:"Artista / Artista",       traits:["Sensibilidad","Espontaneidad","Lealtad","Presencia","Discreción"]},
-  INFP:{name:"Idealista / Idealista",   traits:["Creatividad","Empatía","Autenticidad","Introspección","Flexibilidad"]},
-  INTP:{name:"Pensador / Pensadora",    traits:["Lógica","Curiosidad","Independencia","Análisis","Reserva"]},
-  ESTP:{name:"Promotor / Promotora",    traits:["Dirección","Energía","Adaptabilidad","Practicidad","Sociabilidad"]},
-  ESFP:{name:"Animador / Animadora",    traits:["Entusiasmo","Espontaneidad","Generosidad","Sociabilidad","Presencia"]},
-  ENFP:{name:"Campeón / Campeona",      traits:["Creatividad","Entusiasmo","Curiosidad","Empatía","Versatilidad"]},
-  ENTP:{name:"Visionario / Visionaria", traits:["Ingenio","Pensamiento estratégico","Debate","Curiosidad","Adaptabilidad"]},
-  ESTJ:{name:"Ejecutivo / Ejecutiva",   traits:["Organización","Dirección","Decisión","Confiabilidad","Practicidad"]},
-  ESFJ:{name:"Cuidador / Cuidadora",    traits:["Calidez","Organización","Lealtad","Sociabilidad","Compromiso"]},
-  ENFJ:{name:"Guía / Guía",             traits:["Carisma","Empatía","Organización","Inspiración","Sociabilidad"]},
-  ENTJ:{name:"Comandante / Comandanta", traits:["Liderazgo","Pensamiento estratégico","Decisión","Ambición","Dirección"]}
-};
-
-var TC=["rgba(139,58,143,.28)","rgba(59,53,168,.30)","rgba(26,159,168,.35)","rgba(139,58,143,.22)","rgba(90,176,138,.3)"];
-
-var WORD_DEFS={
-  "Privado":"Que reserva su vida interior y no la comparte fácilmente con otros.",
-  "Abierto":"Que comparte sus pensamientos y emociones con facilidad y naturalidad.",
-  "Programado":"Que prefiere seguir un orden o plan establecido con anticipación.",
-  "Espontáneo":"Que actúa según el momento, sin necesidad de planificar.",
-  "Abstracto":"Que prefiere ideas, conceptos y teorías por sobre datos concretos.",
-  "Sólido":"Que valora lo concreto, verificable y con base en la realidad.",
-  "Apacible":"Que toma decisiones con consideración hacia los demás y el entorno.",
-  "Firme":"Que decide con convicción y mantiene su postura con seguridad.",
-  "Pensamiento":"Orientación hacia el análisis lógico y la objetividad.",
-  "Sentimiento":"Orientación hacia los valores personales y el impacto en las personas.",
-  "Hechos":"Preferencia por datos verificables y experiencias concretas.",
-  "Ideas":"Preferencia por posibilidades, patrones y conceptos originales.",
-  "Impulso":"Tendencia a actuar rápido, adaptarse y dejar las opciones abiertas.",
-  "Decisión":"Tendencia a cerrar temas, planificar y llegar a conclusiones.",
-  "Enérgico":"Que se activa y recarga en contacto con el mundo exterior.",
-  "Tranquilo":"Que conserva energía en ambientes con poca estimulación externa.",
-  "Sistemático":"Que organiza su trabajo y vida según métodos y estructuras definidas.",
-  "Informal":"Que prefiere ambientes flexibles, sin protocolos rígidos.",
-  "Teoría":"Interés por principios generales y explicaciones conceptuales.",
-  "Certeza":"Interés por respuestas verificables y situaciones predecibles.",
-  "Sensible":"Que pondera las emociones y el contexto humano en sus decisiones.",
-  "Justo":"Que aplica criterios objetivos e imparciales al tomar decisiones.",
-  "Convincente":"Que persuade a través de argumentos lógicos y racionales.",
-  "Conmovedor":"Que mueve a otros a través de la empatía y la conexión emocional.",
-  "Declaración":"Preferencia por afirmaciones directas y conclusiones claras.",
-  "Concepto":"Preferencia por ideas abiertas y marcos de pensamiento amplios.",
-  "Sin restricciones":"Necesidad de libertad para explorar sin límites preestablecidos.",
-  "Reservado":"Que comparte poco de sí mismo hasta conocer bien a los demás.",
-  "Expansivo":"Que se expresa con amplitud y abre su mundo a quienes lo rodean.",
-  "Estructurado":"Que trabaja mejor dentro de un marco claro y predecible.",
-  "Dinámico":"Que prospera en entornos cambiantes y busca variedad constante.",
-  "Idea":"Valoración de la originalidad, la imaginación y lo nuevo.",
-  "Realidad":"Valoración de lo práctico, lo tangible y lo que ya funciona.",
-  "Compasión":"Capacidad de conectar con el sufrimiento ajeno y responder con cuidado.",
-  "Previsión":"Capacidad de anticipar consecuencias y planificar con lógica.",
-  "Beneficios":"Orientación hacia resultados prácticos y ventajas concretas.",
-  "Bendiciones":"Orientación hacia la gratitud y los valores más allá de lo material.",
-  "Sensato":"Que actúa con equilibrio, prudencia y sentido común.",
-  "Teórico":"Que prefiere explorar ideas y modelos conceptuales.",
-  "Imaginativo":"Que genera ideas originales y ve posibilidades donde otros no las ven.",
-  "Concreto":"Que piensa en términos de hechos, pasos y resultados prácticos.",
-  "Cálido":"Que transmite afecto y consideración en sus vínculos.",
-  "Objetivo":"Que evalúa situaciones sin dejarse influir por emociones.",
-  "Apasionado":"Que se involucra con intensidad emocional en lo que le importa.",
-  "Construir":"Preferencia por crear desde bases sólidas y probadas.",
-  "Inventar":"Preferencia por crear algo nuevo desde la imaginación.",
-  "Individual":"Preferencia por trabajar de forma autónoma y a tu propio ritmo.",
-  "Grupal":"Preferencia por colaborar y construir junto a otras personas.",
-  "Compadecerse":"Responder al dolor ajeno con empatía y disposición a ayudar.",
-  "Analizar":"Responder a los problemas descomponiéndolos con lógica y precisión.",
-  "Sentimental":"Que da peso a las emociones al evaluar situaciones o personas.",
-  "Analítico":"Que descompone la información para entenderla desde la lógica.",
-  "Fascinante":"Que atrae por su novedad, originalidad o carácter sorprendente.",
-  "Muchos amigos":"Preferencia por tener una red social amplia y variada.",
-  "Pocos amigos cercanos":"Preferencia por vínculos profundos con un grupo pequeño."
-};
-
-var SCENARIOS={
-  59:"Empezás un proyecto con <strong>entrega en una semana</strong>. El equipo recién arranca y hay mucho por definir.",
-  60:"Estás en un evento con personas que no conocés.",
-  61:"Tenés que hacer algo que mucha gente también hace, una tarea cotidiana.",
-  62:"Recién conocés a alguien en un contexto laboral.",
-  63:"Tenés que elegir entre dos formatos de capacitación.",
-  64:"Alguien del equipo te hace un comentario positivo sobre cómo trabajaste.",
-  65:"Tenés que decidir cómo organizar una serie de tareas importantes.",
-  66:"Estás en un grupo de trabajo o reunión.",
-  67:"Estás en una fiesta o reunión social con conocidos.",
-  68:"Pensás en cómo organizar el fin de semana.",
-  69:"Alguien te describe con una sola palabra frente a otros.",
-  70:"Tenés varios compromisos por delante esta semana.",
-  71:"Estás trabajando en un proyecto que importa.",
-  72:"Tenés una tarde libre y aparece la oportunidad de charlar.",
-  73:"Tu equipo te pregunta cómo preferís abordar algo que ya funciona.",
-  74:"Estás leyendo un informe o artículo largo para el trabajo.",
-  75:"Tenés que elegir con quién trabajar de forma cercana.",
-  76:"Tenés varias tareas que hacer durante el día.",
-  77:"Te encontrás en un ascensor con alguien que no conocés.",
-  78:"Tenés que tomar una decisión que afecta a tu equipo."
-};
-
-var SLIDER_POLES={
-  79:["¿Qué te atrae más?","Imaginación","Realismo"],
-  80:["¿Qué te define más?","Generosidad","Convicción"],
-  81:["¿Con cuál te identificas?","Equidad","Afecto"],
-  82:["¿Qué te motiva más?","Producción","Diseño"],
-  83:["¿Qué preferís?","Posibilidades","Certezas"],
-  84:["¿Qué te resuena más?","Ternura","Determinación"],
-  85:["¿Qué te describe?","Practicidad","Sentimiento"],
-  86:["¿Qué preferís?","Hacer","Crear"],
-  87:["¿Qué te atrae más?","Algo novedoso","Algo conocido"],
-  88:["¿Qué te sale naturalmente?","Compadecerse","Analizar"],
-  89:["¿Con cuál te identificas más?","Terquedad","Ternura"],
-  90:["¿Qué preferís?","Concrección","Abstracción"],
-  91:["¿Qué te describe mejor?","Fidelidad","Determinación"],
-  92:["¿Qué valorás más?","Competencia","Buen corazón"],
-  93:["¿Qué te atrae?","Practicidad","Innovación"]
-};
-
-// Flashcard IDs: every 4th in part 2 (27,31,35,39,43,47,51,55)
-var FC_IDS={27:1,31:1,35:1,39:1,43:1,47:1,51:1,55:1};
-
-var qi=0, answers={}, sliderVals={}, userName='', advancing=false;
-
-function showPage(id){
-  document.querySelectorAll('.page').forEach(function(p){p.classList.remove('on');});
-  document.getElementById(id).classList.add('on');
-  window.scrollTo({top:0,behavior:'smooth'});
+  $('ftr').classList.toggle('hidden', view === 'q' || view === 'chap');
 }
-function setHdrProg(txt,pct){
-  document.getElementById('progTxt').innerHTML=txt;
-  var w=document.getElementById('progBarWrap');
-  if(pct!==null){w.style.display='block';document.getElementById('progFill').style.width=pct+'%';}
-  else{w.style.display='none';}
+function show(v){
+  view = v;
+  var html = {intro:introHTML, q:questionHTML, chap:chapHTML, sending:sendingHTML, result:resultHTML}[v]();
+  $('app').innerHTML = html;
+  setHeader();
+  window.scrollTo({top:0, behavior:'auto'});
+  if (v === 'intro') checkStart();
+  if (v === 'q') afterQuestionRender();
 }
 
-window.tkStart=function(){
-  var v=document.getElementById('nameInput').value.trim();
-  if(v.length<2){
-    document.getElementById('nameInput').focus();
-    document.getElementById('nameInput').style.borderColor='#c2415a';
+var ARROW = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+var ARROW_S = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>';
+var BACK_S = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>';
+
+function introHTML(){
+  var n = answeredCount();
+  var resume = (n > 0 && !state.done) ? '<div class="resume"><h3>Tenés una evaluación en curso</h3><p>Respondiste ' + n + ' de ' + TOTAL + ' preguntas. Podés retomar donde la dejaste o empezar de nuevo.</p><div class="btn-row" style="margin-top:0"><button class="btn" data-action="resume">Continuar evaluación</button><button class="btn-ghost" data-action="fresh">Empezar de nuevo</button></div></div>' : '';
+  return '<div>' +
+    '<div class="hero"><div class="wrap"><p class="sup">Evaluación · Tenkai Consulting</p><span class="hero-thin">Descubrí tu</span><span class="hero-bold">Estilo Profesional</span></div></div>' +
+    '<div class="wrap"><div class="sec">' +
+    '<p class="intro-p">El modelo MBTI describe cómo preferís usar tu energía, tomar información, decidir y organizarte. Esta evaluación te va a mostrar cuál es tu estilo hoy y cómo se traduce en tu forma de trabajar.</p>' +
+    '<div class="chips-info"><span class="info-pill"><strong>93</strong> preguntas</span><span class="info-pill"><strong>15</strong> minutos aprox.</span><span class="info-pill"><strong>4</strong> capítulos</span></div>' +
+    resume +
+    '<div class="card-accent"><p class="sup" style="color:var(--coral)">Cómo responder</p><p class="disc-p" style="margin:6px 0 0">En cada pregunta elegís lo que <strong style="color:var(--ink)">más se parece a vos</strong>. No hay respuestas correctas ni incorrectas, y ningún estilo es mejor que otro. Vas a ver distintos formatos, pero todos miden lo mismo. Respondé cómo sos habitualmente, no cómo te gustaría ser.</p></div>' +
+    '<div class="steps3"><div class="step3"><div class="step3-n">1 · Respondés</div><div class="step3-t">93 preguntas, de a una por pantalla</div></div><div class="step3"><div class="step3-n">2 · Se envía</div><div class="step3-t">Tus respuestas se envían solas al terminar para armar tu informe completo</div></div><div class="step3"><div class="step3-n">3 · Lo trabajamos</div><div class="step3-t">Tu análisis completo lo vemos en tu próxima reunión</div></div></div>' +
+    '<div class="grid2"><div class="field"><label class="lbl" for="fName">Nombre</label><input type="text" id="fName" value="' + esc(state.nombre) + '" autocomplete="given-name" placeholder="Tu nombre" maxlength="60"></div>' +
+    '<div class="field"><label class="lbl" for="fLast">Apellido</label><input type="text" id="fLast" value="' + esc(state.apellido) + '" autocomplete="family-name" placeholder="Tu apellido" maxlength="60"></div></div>' +
+    '<div class="field" style="max-width:420px"><label class="lbl" for="fMail">Email</label><input type="email" id="fMail" value="' + esc(state.email) + '" autocomplete="email" placeholder="tu@email.com" maxlength="120"></div>' +
+    '<p class="note" style="max-width:560px">Usamos tu email para confirmarte la recepción de la evaluación.</p>' +
+    '<div class="btn-row"><button class="btn" id="btnStart" data-action="start" disabled>Comenzar evaluación ' + ARROW + '</button></div>' +
+    '</div></div></div>';
+}
+
+/* ── Formatos de respuesta ─────────────────────────────────── */
+function letterEl(l){ return '<span class="letter">' + l + '</span>'; }
+function pickHTML(f, q, ans){
+  var A = esc(q.a), B = esc(q.b), a = ans === 'A' ? ' on' : '', b = ans === 'B' ? ' on' : '';
+  if (f === 'duel') {
+    return '<div class="duel"><button class="dcard' + a + '" data-action="pick" data-l="A">' + letterEl('A') + '<span>' + A + '</span></button>' +
+           '<button class="dcard' + b + '" data-action="pick" data-l="B">' + letterEl('B') + '<span>' + B + '</span></button></div>';
+  }
+  if (f === 'stack' || f === 'scn') {
+    return '<div class="stk"><button class="srow' + a + '" data-action="pick" data-l="A">' + letterEl('A') + '<span>' + A + '</span></button>' +
+           '<button class="srow' + b + '" data-action="pick" data-l="B">' + letterEl('B') + '<span>' + B + '</span></button></div>';
+  }
+  if (f === 'chips') {
+    return '<div class="chipsr"><button class="wchip' + a + '" data-action="pick" data-l="A">' + A + '</button><button class="wchip' + b + '" data-action="pick" data-l="B">' + B + '</button></div>';
+  }
+  if (f === 'vs') {
+    return '<div class="vs"><button class="vbar' + a + '" data-action="pick" data-l="A">' + A + '</button><div class="vmid">o</div><button class="vbar' + b + '" data-action="pick" data-l="B">' + B + '</button></div>';
+  }
+  if (f === 'flip') {
+    var dA = DEFS[q.a] || 'Pensá en lo que esta palabra te despierta.', dB = DEFS[q.b] || 'Pensá en lo que esta palabra te despierta.';
+    return '<div class="fc" id="fc" data-action="flip"><div class="fc-in">' +
+      '<div class="fc-face fc-front"><div class="fc-eye">Tocá para ver el significado</div><div class="fc-words">' + A + '<em>·</em>' + B + '</div><div class="fc-hint">↻ dar vuelta la tarjeta</div></div>' +
+      '<div class="fc-face fc-back"><div class="fc-eye">Significados</div><div class="fc-w">' + A + '</div><div class="fc-d">' + esc(dA) + '</div><div class="fc-sep"></div><div class="fc-w">' + B + '</div><div class="fc-d">' + esc(dB) + '</div></div>' +
+      '</div></div>' +
+      '<div class="chipsr"><button class="wchip' + a + '" data-action="pick" data-l="A">' + A + '</button><button class="wchip' + b + '" data-action="pick" data-l="B">' + B + '</button></div>';
+  }
+  return '';
+}
+function scaleVal(q){
+  var a = state.ans[q.id], s = state.st[q.id] || 2;
+  return a === 'A' ? 3 - s : (a === 'B' ? 3 + s : 3);
+}
+function scaleHTML(q){
+  var v = scaleVal(q), ticks = '';
+  for (var t = 0; t < 7; t++) ticks += '<i' + (t === 3 ? ' class="c"' : '') + '></i>';
+  return '<div class="bal"><div class="bcard" id="bcA">' + letterEl('A') + '<span>' + esc(q.a) + '</span></div><div class="bcard" id="bcB">' + letterEl('B') + '<span>' + esc(q.b) + '</span></div></div>' +
+    '<div class="bsl"><div class="sl-lab" id="slLab" aria-live="polite"></div>' +
+    '<input class="qslider" id="qscale" type="range" min="0" max="6" step="1" value="' + v + '" aria-label="Deslizá hacia la opción con la que más te identificás">' +
+    '<div class="bticks">' + ticks + '</div></div>';
+}
+function paintScale(v){
+  var q = QS[state.q], word = isWordQ(q), sl = $('qscale'); if (!sl) return;
+  var c = 50, p = v / 6 * 100, lo = Math.min(c, p), hi = Math.max(c, p);
+  sl.style.background = 'linear-gradient(to right,#e2e0ea 0%,#e2e0ea ' + lo + '%,#3b35a8 ' + lo + '%,#3b35a8 ' + hi + '%,#e2e0ea ' + hi + '%,#e2e0ea 100%)';
+  sl.classList.toggle('off', v === 3);
+  var A = $('bcA'), B = $('bcB'), lab = $('slLab'), s = Math.abs(v - 3);
+  A.className = 'bcard'; B.className = 'bcard';
+  if (v === 3) {
+    lab.className = 'sl-lab'; lab.textContent = 'Movelo hacia A o hacia B para responder';
     return;
   }
-  userName=v;
-  qi=0;answers={};sliderVals={};
-  showPage('pgQ');
-  renderQ();
-};
-var pb=document.getElementById('printBtn');if(pb)pb.addEventListener('click',function(){window.print();});
-
-function showTransition(partNum,afterCallback){
-  var t=TRANS.find(function(x){return x.part===partNum;});
-  if(!t){afterCallback();return;}
-  document.getElementById('transBadge').textContent=t.badge;
-  document.getElementById('transCount').textContent=t.count;
-  document.getElementById('transCountLbl').textContent=t.countLbl;
-  document.getElementById('transTitle').textContent=t.title;
-  document.getElementById('transDesc').textContent=t.desc;
-  document.getElementById('transTipTxt').innerHTML=t.tip;
-  document.getElementById('transBtn').onclick=function(){
-    showPage('pgQ');
-    afterCallback();
-  };
-  setHdrProg(t.badge,Math.round((parseInt(t.count)/93)*100));
-  showPage('pgTrans');
+  var win = v < 3 ? A : B, lose = v < 3 ? B : A, name = v < 3 ? q.a : q.b, letter = v < 3 ? 'A' : 'B';
+  win.classList.add(s === 3 ? 'lean3' : 'lean'); lose.classList.add('dim');
+  lab.className = 'sl-lab on';
+  lab.textContent = STR_LAB[s] + ' cerca de ' + (word ? '«' + name + '»' : 'la ' + letter);
 }
 
-function renderQ(){
-  var q=QS[qi];
-  var total=QS.length;
-  var pct=Math.round(((qi+1)/total)*100);
-  setHdrProg((qi+1)+'/'+total,pct);
-  document.getElementById('qProgFg').style.width=pct+'%';
-  document.getElementById('qProgLbl').textContent=(qi+1)+' de '+total;
-
-  var ph=document.getElementById('partHdr');
-  var prevPart=qi>0?QS[qi-1].p:-1;
-  if(q.p!==prevPart){
-    var partNames=['Parte I — Situaciones cotidianas','Parte II — Pares de palabras','Parte III — Situaciones laborales','Parte IV — Palabras finales'];
-    ph.innerHTML='<div class="part-badge-inline">'+partNames[q.p-1]+'</div>';
-  }else{ph.innerHTML='';}
-
-  var c=document.getElementById('qOpts');
-  var typeTags={1:'📋 Situación',2:'⚡ Palabra',3:'🎬 Escenario',4:'🎚️ Escala',5:'🃏 Tarjeta'};
-  var typeColors={1:'#3b35a8',2:'#d4522a',3:'#8b3a8f',4:'#1a9fa8',5:'#d4a017'};
-  var qType=q.p===2?(FC_IDS[q.id]?5:2):q.p;
-  var tagEl=document.getElementById('qTypeTag');
-  if(tagEl){tagEl.textContent=typeTags[qType];tagEl.style.background=typeColors[qType]+'18';tagEl.style.color=typeColors[qType];tagEl.style.border='1px solid '+typeColors[qType]+'30';}
-  if(q.p===1){renderType1(c,q);}
-  else if(q.p===2){if(FC_IDS[q.id]){renderType5(c,q);}else{renderType2(c,q);}}
-  else if(q.p===3){renderType3(c,q);}
-  else if(q.p===4){renderType4(c,q);}
-  updateNav();
+function questionHTML(){
+  var i = state.q, q = QS[i], f = fmtOf(i), val = state.ans[q.id];
+  var last = i === TOTAL - 1, isScale = (f === 'scale' || f === 'scnScale');
+  var minLeft = Math.max(1, Math.ceil((TOTAL - i) * 0.16));
+  var ch = CHAPTERS[q.p - 1];
+  var scn = (f.indexOf('scn') === 0) ? '<div class="scn"><div class="scn-eye">Escenario</div><div class="scn-t">' + esc(SCEN[q.id] || '') + '</div></div>' : '';
+  var body = isScale ? scaleHTML(q) : pickHTML(f === 'scnDuel' ? 'duel' : f, q, val);
+  return '<div class="q-scr"><div class="q-eye"><span class="q-eye-l">Capítulo ' + q.p + ' · ' + esc(ch.short) + '</span><span class="q-eye-r">Quedan ~' + minLeft + ' min</span></div>' +
+    '<div class="q-card" id="qcard"><div class="q-ghost">' + String(i + 1).padStart(2, '0') + '</div>' +
+    '<span class="fmt-tag">' + FMT_NAME[f] + '</span>' + scn +
+    '<p class="q-txt">' + esc(stemOf(i)) + '</p><p class="q-ask">' + ASK[f] + '</p>' +
+    '<div class="resp" id="resp">' + body + '</div></div>' +
+    '<div class="q-nav"><button class="btn-ghost" data-action="prev">' + BACK_S + ' Anterior</button>' +
+    '<span class="q-hint" id="qHint">' + (val ? '' : 'Elegí una opción para continuar') + '</span>' +
+    '<button class="btn" id="btnNext" data-action="next"' + (val ? '' : ' disabled') + '>' + (last ? 'Enviar evaluación' : 'Siguiente') + ' ' + ARROW_S + '</button></div></div>';
+}
+function afterQuestionRender(){
+  var f = fmtOf(state.q);
+  if (f === 'scale' || f === 'scnScale') paintScale(scaleVal(QS[state.q]));
 }
 
-function renderType1(c,q){
-  var selA=answers[q.id]==='A', selB=answers[q.id]==='B';
-  c.innerHTML=
-    '<p class="t1-question fup">'+q.q+'</p>'+
-    '<div class="t1-opts fup">'+
-      '<button class="t1-opt'+(selA?' sel':'')+'" data-ans="A">'+
-        '<span class="t1-opt-letter">A</span>'+
-        '<span class="t1-opt-txt">'+q.a+'</span>'+
-      '</button>'+
-      '<button class="t1-opt'+(selB?' sel':'')+'" data-ans="B">'+
-        '<span class="t1-opt-letter">B</span>'+
-        '<span class="t1-opt-txt">'+q.b+'</span>'+
-      '</button>'+
-    '</div>';
-  c.onclick=function(e){
-    var btn=e.target.closest('[data-ans]');
-    if(!btn)return;
-    pick(btn.getAttribute('data-ans'));
-  };
+function chapHTML(){
+  var c = CHAPTERS[chapNow - 1], n = answeredCount(), pct = Math.round(n / TOTAL * 100);
+  var minLeft = Math.max(1, Math.ceil((TOTAL - n) * 0.16));
+  return '<div class="mid"><span class="mid-badge">Capítulo ' + chapNow + ' de 4</span>' +
+    '<div class="mid-ring" style="--p:' + pct + '"><span>' + pct + '%</span></div>' +
+    '<h2>' + esc(c.title) + '</h2><p>' + esc(c.desc) + '</p>' +
+    '<div class="mid-tip"><strong>' + esc(c.tipLead) + '</strong> ' + esc(c.tip) + '</div>' +
+    '<div class="mid-stats"><div class="mid-stat"><b>' + n + '</b><span>Respondidas</span></div><div class="mid-stat"><b>' + (TOTAL - n) + '</b><span>Restantes</span></div><div class="mid-stat"><b>' + minLeft + '</b><span>Min aprox.</span></div></div>' +
+    '<button class="btn" data-action="chapGo">Seguir ' + ARROW + '</button></div>';
 }
 
-function renderType2(c,q){
-  var selA=answers[q.id]==='A', selB=answers[q.id]==='B';
-  c.innerHTML=
-    '<p class="t2-prompt fup">¿Cuál de estas palabras te <strong>representa más</strong>?</p>'+
-    '<div class="t2-chips fup">'+
-      '<button class="t2-chip'+(selA?' sel':'')+'" data-ans="A"><span>'+q.a+'</span></button>'+
-      '<button class="t2-chip'+(selB?' sel':'')+'" data-ans="B"><span>'+q.b+'</span></button>'+
-    '</div>';
-  c.onclick=function(e){
-    var btn=e.target.closest('[data-ans]');
-    if(!btn)return;
-    pick(btn.getAttribute('data-ans'));
-  };
-}
-
-function renderType3(c,q){
-  var selA=answers[q.id]==='A', selB=answers[q.id]==='B';
-  var scenario=SCENARIOS[q.id]||'Pensá en cómo te movés habitualmente en el trabajo.';
-  c.innerHTML=
-    '<div class="t3-scenario fup">'+
-      '<div class="t3-scenario-eye">Escenario</div>'+
-      '<div class="t3-scenario-txt">'+scenario+'</div>'+
-    '</div>'+
-    '<p class="t3-question fup">'+q.q+'</p>'+
-    '<div class="t3-opts fup">'+
-      '<button class="t3-opt'+(selA?' sel':'')+'" data-ans="A">'+q.a+'</button>'+
-      '<button class="t3-opt'+(selB?' sel':'')+'" data-ans="B">'+q.b+'</button>'+
-    '</div>';
-  c.onclick=function(e){
-    var btn=e.target.closest('[data-ans]');
-    if(!btn)return;
-    pick(btn.getAttribute('data-ans'));
-  };
-}
-
-function renderType4(c,q){
-  var poles=SLIDER_POLES[q.id]||['¿Qué preferís?',q.a,q.b];
-  var saved=sliderVals[q.id]!==undefined?sliderVals[q.id]:null;
-  var hasAnswer=answers[q.id]!==undefined;
-  var initPct=saved!==null?saved:50;
-  c.innerHTML=
-    '<p class="t4-question fup">'+poles[0]+'</p>'+
-    '<div class="t4-poles">'+
-      '<div class="t4-pole">'+poles[1]+'</div>'+
-      '<div class="t4-pole right">'+poles[2]+'</div>'+
-    '</div>'+
-    '<div class="t4-track-wrap fup">'+
-      '<div class="t4-track" id="t4track">'+
-        '<div class="t4-fill" id="t4fill"></div>'+
-        '<div class="t4-thumb" id="t4thumb" style="left:50%"></div>'+
-      '</div>'+
-    '</div>'+
-    '<div class="t4-dots">'+
-      '<div class="t4-dot"></div><div class="t4-dot"></div><div class="t4-dot"></div>'+
-      '<div class="t4-dot"></div><div class="t4-dot"></div><div class="t4-dot"></div>'+
-      '<div class="t4-dot"></div>'+
-    '</div>'+
-    '<div class="t4-label-wrap"><div class="t4-label" id="t4label">'+(hasAnswer?getLabelText(initPct,poles):'Deslizá para responder')+'</div></div>';
-
-  var track=document.getElementById('t4track');
-  var dragging=false;
-
-  function getPct(e){
-    var rect=track.getBoundingClientRect();
-    var x=(e.touches?e.touches[0].clientX:e.clientX)-rect.left;
-    return Math.max(0,Math.min(100,Math.round((x/rect.width)*100)));
+function sendingHTML(){
+  if (sendErr) {
+    return '<div class="send-scr"><h2>No pudimos enviar tu evaluación</h2><p>' + esc(sendErr) + '</p><p style="font-size:13px;color:var(--muted)">Tus respuestas están guardadas en este dispositivo. No tenés que volver a responder.</p><button class="btn" data-action="retry">Reintentar envío</button></div>';
   }
-
-  function applySlider(pct,pl,triggerPick){
-    var thumb=document.getElementById('t4thumb');
-    var fill=document.getElementById('t4fill');
-    var lbl=document.getElementById('t4label');
-    if(!thumb||!fill||!lbl)return;
-    thumb.style.left=pct+'%';
-    if(pct<50){fill.style.left=pct+'%';fill.style.width=(50-pct)+'%';}
-    else{fill.style.left='50%';fill.style.width=(pct-50)+'%';}
-    lbl.textContent=getLabelText(pct,pl);
-    lbl.style.background=pct<45?'rgba(59,53,168,.1)':pct>55?'rgba(212,82,42,.1)':'rgba(139,58,143,.1)';
-    lbl.style.color=pct<45?'#3b35a8':pct>55?'#d4522a':'#8b3a8f';
-    sliderVals[q.id]=pct;
-    if(triggerPick){
-      answers[q.id]=pct<=50?'A':'B';
-      updateNav();
-    }
-  }
-
-  track.addEventListener('mousedown',function(e){dragging=true;applySlider(getPct(e),poles,true);});
-  track.addEventListener('click',function(e){applySlider(getPct(e),poles,true);});
-  document.addEventListener('mousemove',function mv(e){if(dragging)applySlider(getPct(e),poles,true);});
-  document.addEventListener('mouseup',function(){dragging=false;});
-  track.addEventListener('touchstart',function(e){applySlider(getPct(e),poles,true);},{passive:true});
-  track.addEventListener('touchmove',function(e){applySlider(getPct(e),poles,true);},{passive:true});
-  c.onclick=null;
-  if(hasAnswer){applySlider(initPct,poles,false);}
+  return '<div class="send-scr"><div class="big-spin"></div><h2>Enviando tu evaluación</h2><p>Estamos guardando tus respuestas para armar tu informe completo. No cierres esta pantalla.</p></div>';
 }
 
-function getLabelText(pct,pl){
-  if(pct<20)return 'Claramente: '+pl[1];
-  if(pct<40)return 'Bastante hacia: '+pl[1];
-  if(pct<=60)return 'Equilibrio entre ambas';
-  if(pct<80)return 'Bastante hacia: '+pl[2];
-  return 'Claramente: '+pl[2];
-}
-
-function renderType5(c,q){
-  var selA=answers[q.id]==='A', selB=answers[q.id]==='B';
-  var wordA=q.a, wordB=q.b;
-  var defA=WORD_DEFS[wordA]||'Pensá en lo que te genera esta palabra.';
-  var defB=WORD_DEFS[wordB]||'Pensá en lo que te genera esta palabra.';
-  c.innerHTML=
-    '<p class="t2-prompt fup">¿Cuál te representa más? <strong>Tocá la tarjeta</strong> para ver el significado de cada una.</p>'+
-    '<div class="t5-fc-wrap fup" id="fcCard">'+
-      '<div class="t5-fc-inner">'+
-        '<div class="t5-fc-face t5-fc-front">'+
-          '<div class="t5-fc-eye">Tocá para ver</div>'+
-          '<div class="t5-fc-word">'+wordA+' ↔ '+wordB+'</div>'+
-          '<div class="t5-fc-hint">↻ voltear tarjeta</div>'+
-        '</div>'+
-        '<div class="t5-fc-face t5-fc-back">'+
-          '<div class="t5-fc-eye">Significados</div>'+
-          '<div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:4px;letter-spacing:-.3px">'+wordA+'</div>'+
-          '<div class="t5-fc-desc">'+defA+'</div>'+
-          '<div class="t5-sep"></div>'+
-          '<div style="font-size:14px;font-weight:800;color:rgba(255,255,255,.8);margin-bottom:4px;letter-spacing:-.3px">'+wordB+'</div>'+
-          '<div class="t5-fc-desc">'+defB+'</div>'+
-        '</div>'+
-      '</div>'+
-    '</div>'+
-    '<div class="t5-chips fup">'+
-      '<button class="t5-chip'+(selA?' sel':'')+'" data-ans="A"><span>'+wordA+'</span></button>'+
-      '<button class="t5-chip'+(selB?' sel':'')+'" data-ans="B"><span>'+wordB+'</span></button>'+
-    '</div>';
-  document.getElementById('fcCard').addEventListener('click',function(){
-    this.classList.toggle('flipped');
-  });
-  c.addEventListener('click',function(e){
-    var btn=e.target.closest('[data-ans]');
-    if(!btn)return;
-    pick(btn.getAttribute('data-ans'));
-  });
-}
-
-function pick(letter){
-  if(advancing)return;
-  answers[QS[qi].id]=letter;
-  document.querySelectorAll('[data-ans]').forEach(function(btn){
-    btn.classList.toggle('sel',btn.getAttribute('data-ans')===letter);
-  });
-  updateNav();
-  advancing=true;
-  var snapQi=qi;
-  setTimeout(function(){
-    advancing=false;
-    if(snapQi!==qi)return;
-    advanceQ();
-  },380);
-}
-
-function advanceQ(){
-  var curPart=QS[qi].p;
-  var isLast=qi===QS.length-1;
-  var isLastInPart=!isLast&&QS[qi+1].p!==curPart;
-  if(isLast){showResults();return;}
-  if(isLastInPart){
-    var np=QS[qi+1].p;
-    qi++;
-    showTransition(np,function(){renderQ();});
-  }else{
-    qi++;
-    renderQ();
-  }
-}
-
-function updateNav(){
-  var has=!!answers[QS[qi].id];
-  var nb=document.getElementById('nextBtn');
-  nb.style.opacity=has?'1':'0.3';
-  nb.style.pointerEvents=has?'auto':'none';
-  var isLast=qi===QS.length-1;
-  nb.innerHTML=(isLast?'Ver resultados':'Siguiente')+
-    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>';
-  document.getElementById('qHint').style.display=has?'none':'inline';
-}
-
-document.getElementById('nextBtn').addEventListener('click',function(){
-  if(!answers[QS[qi].id])return;
-  advancing=false;
-  advanceQ();
-});
-document.getElementById('prevBtn').addEventListener('click',function(){
-  advancing=false;
-  if(qi>0){qi--;renderQ();}
-  else{showPage('pgIntro');setHdrProg('Estilo Profesional · MBTI',null);}
-});
-
-function calcType(){
-  var c={E:0,I:0,S:0,N:0,T:0,F:0,J:0,P:0};
-  var poles={EI:['E','I'],SN:['S','N'],TF:['T','F'],JP:['J','P']};
-  Object.keys(answers).forEach(function(qid){
-    var entry=KEY[qid];if(!entry)return;
-    var dim=entry[0],poleA=entry[1];
-    var pr=poles[dim];
-    var poleB=pr[0]===poleA?pr[1]:pr[0];
-    c[answers[qid]==='A'?poleA:poleB]++;
-  });
-  return{
-    type:(c.E>c.I?'E':'I')+(c.S>c.N?'S':'N')+(c.T>c.F?'T':'F')+(c.J>c.P?'J':'P'),
-    c:c
-  };
-}
-
-function showResults(){
-  var res=calcType();
-  var type=res.type,c=res.c;
-  var info=TYPES[type]||{name:'Perfil único',traits:['Autenticidad','Reflexión','Singularidad','Curiosidad','Adaptabilidad']};
-  document.getElementById('resName').textContent=userName;
-  document.getElementById('resSub').textContent=Object.keys(answers).length+' preguntas respondidas · Instrumento MBTI';
-  document.getElementById('typeLetters').textContent=type;
-  document.getElementById('typeName').textContent=info.name;
-  var dimData=[
-    {w:type[0],ws:type[0]==='E'?c.E:c.I, l:type[0]==='E'?'I':'E', ls:type[0]==='E'?c.I:c.E},
-    {w:type[1],ws:type[1]==='S'?c.S:c.N, l:type[1]==='S'?'N':'S', ls:type[1]==='S'?c.N:c.S},
-    {w:type[2],ws:type[2]==='T'?c.T:c.F, l:type[2]==='T'?'F':'T', ls:type[2]==='T'?c.F:c.T},
-    {w:type[3],ws:type[3]==='J'?c.J:c.P, l:type[3]==='J'?'P':'J', ls:type[3]==='J'?c.P:c.J}
-  ];
-  document.getElementById('dimBars').innerHTML=dimData.map(function(d){
-    var total=d.ws+d.ls;
-    var pct=total>0?Math.round((d.ws/total)*100):50;
-    return '<div class="dim-card">'+
-      '<div class="dim-poles">'+
-        '<div class="dim-pole winner">'+
-          '<span class="dim-pole-lbl">'+d.w+'</span>'+
-          '<span class="dim-pole-score">'+d.ws+'</span>'+
-        '</div>'+
-        '<div class="dim-bar-track"><div class="dim-bar-fill" style="width:'+pct+'%"></div></div>'+
-        '<div class="dim-pole loser">'+
-          '<span class="dim-pole-lbl">'+d.l+'</span>'+
-          '<span class="dim-pole-score">'+d.ls+'</span>'+
-        '</div>'+
-      '</div>'+
-    '</div>';
+/* ── Resultado (pantallazo: sin números) ───────────────────── */
+function resultHTML(){
+  var r = calc(state.ans), type = r.type, info = TYPES[type];
+  var rows = DIMS.map(function(d){
+    var lc = r.c[d.l], rc = r.c[d.r], tot = lc + rc;
+    var x = tot ? Math.round(rc / tot * 100) : 50;          /* 0 = todo izquierda, 100 = todo derecha */
+    var winRight = rc >= lc;                                 /* empate: polo derecho */
+    var fillL = Math.min(50, x), fillW = Math.abs(x - 50);
+    return '<div class="dim"><div class="dim-t">' + esc(d.t) + '</div>' +
+      '<div class="dim-track"><div class="dim-fill" style="left:' + fillL + '%;width:' + fillW + '%"></div><div class="dim-mid"></div><div class="dim-dot" style="left:' + x + '%"></div></div>' +
+      '<div class="dim-poles"><span class="' + (winRight ? '' : 'win') + '">' + esc(d.ln) + ' (' + d.l + ')</span><span class="' + (winRight ? 'win' : '') + '">' + esc(d.rn) + ' (' + d.r + ')</span></div></div>';
   }).join('');
-  document.getElementById('traitsPills').innerHTML=info.traits.map(function(t,i){
-    return '<span class="trait-pill" style="background:'+TC[i%TC.length]+'">'+t+'</span>';
+  var tiles = DIMS.map(function(d, i){
+    var l = type.charAt(i), nm = (l === d.l) ? d.ln : d.rn;
+    return '<div class="tile' + (i % 2 ? ' g' : '') + '"><div class="tile-l">' + l + '</div><div class="tile-n">' + esc(nm) + '</div></div>';
   }).join('');
-  // mail link removed
-  setHdrProg('Resultado listo',null);
-  showPage('pgRes');
+  var pills = info.traits.map(function(t, i){ return '<span class="trait' + (i % 2 ? ' g' : '') + '">' + esc(t) + '</span>'; }).join('');
+  return '<div><div class="res-hero"><div class="wrap">' +
+    '<div class="res-ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>Evaluación enviada</div>' +
+    '<h1 class="res-t">Gracias, ' + esc(state.nombre.split(' ')[0]) + '. Este es tu primer pantallazo</h1>' +
+    '<p class="res-s">Recibimos tus respuestas y con ellas se arma tu informe completo. Mientras tanto, este es el estilo que se perfila hoy en tu forma de trabajar.</p></div></div>' +
+    '<div class="wrap"><div class="sec">' +
+    '<div class="type-card"><p class="type-eye">Tu estilo profesional</p><div class="type-tiles">' + tiles + '</div><p class="type-desc">' + esc(info.d) + '</p></div>' +
+    '<p class="sup" style="margin-bottom:12px">Tu perfil de un vistazo</p>' + rows +
+    '<p class="sup" style="margin:26px 0 12px">Primeras pistas</p><div class="traits">' + pills + '</div>' +
+    '<div class="next-box"><strong>Qué sigue.</strong> Esto es solo un adelanto. El análisis completo, con el significado de cada preferencia en tu caso, las tensiones entre ellas y lo que implican para tu carrera, se trabaja en tu próxima reunión del proceso de diseño de carrera.</div>' +
+    '<div class="restart2" id="restartBox"><button class="btn-ghost" id="btnRestart" data-action="restart">Volver a iniciar</button>' +
+    '<div class="restart-confirm hidden" id="restartConfirm"><p><strong>Volver a iniciar borra lo cargado en este dispositivo</strong> y te lleva al principio para hacer la evaluación de nuevo. Lo que ya enviaste no se borra.</p><div class="actions-row"><button class="btn" data-action="restartYes">Sí, empezar de cero</button><button class="btn-ghost" data-action="restartNo">Cancelar</button></div></div></div>' +
+    '</div></div></div>';
 }
 
+/* ── LÓGICA DE LA EVALUACIÓN ───────────────────────────────── */
+function checkStart(){
+  var b = $('btnStart'); if (!b) return;
+  b.disabled = !(state.nombre.trim().length > 1 && state.apellido.trim().length > 1 && validEmail(state.email));
+}
+function startEval(){
+  state.nombre = state.nombre.trim(); state.apellido = state.apellido.trim(); state.email = state.email.trim();
+  if (!state.sid) state.sid = newSid();
+  if (!state.started) state.started = Date.now();
+  state.q = 0; save(); show('q');
+}
+function curQ(){ return QS[state.q]; }
+function enableNext(){ var b = $('btnNext'); if (b) b.disabled = false; var h = $('qHint'); if (h) h.textContent = ''; }
+
+function setPick(l){
+  var q = curQ(), idx = state.q;
+  state.ans[q.id] = l; delete state.st[q.id]; save();
+  document.querySelectorAll('#resp [data-l]').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-l') === l); });
+  enableNext();
+  clearTimeout(advTimer);
+  advTimer = setTimeout(function(){ if (view === 'q' && state.q === idx) advance(); }, 300);
+}
+function setScale(v){
+  var q = curQ();
+  if (v === 3) {
+    delete state.ans[q.id]; delete state.st[q.id]; save();
+    var b = $('btnNext'); if (b) b.disabled = true;
+    var h = $('qHint'); if (h) h.textContent = 'Elegí un lado para continuar';
+  } else {
+    state.ans[q.id] = v < 3 ? 'A' : 'B'; state.st[q.id] = Math.abs(v - 3); save();
+    enableNext();
+  }
+  paintScale(v);
+}
+function advance(){
+  clearTimeout(advTimer);
+  var nxt = state.q + 1;
+  if (nxt >= TOTAL) { finish(); return; }
+  var np = QS[nxt].p;
+  state.q = nxt;
+  if (np !== QS[nxt - 1].p && !state.seen[np]) { state.seen[np] = 1; save(); chapNow = np; show('chap'); return; }
+  save(); show('q');
+}
+function goPrev(){
+  clearTimeout(advTimer);
+  if (state.q > 0) { state.q--; save(); show('q'); }
+  else show('intro');
+}
+function finish(){
+  state.done = true;
+  state.minutos = Math.max(1, Math.min(240, Math.round((Date.now() - (state.started || Date.now())) / 60000)));
+  save(); sendErr = ''; show('sending'); sendEval();
+}
+function payload(){
+  var r = {}; QS.forEach(function(q){ r[q.id] = state.ans[q.id]; });
+  return {sid:state.sid, nombre:state.nombre.trim(), apellido:state.apellido.trim(), email:state.email.trim(), respuestas:r, minutos:state.minutos};
+}
+async function sendEval(){
+  if (sending) return; sending = true;
+  try {
+    if (APPS_SCRIPT_URL.indexOf('http') !== 0) throw new Error('NO_URL');
+    var ctl = new AbortController(), tm = setTimeout(function(){ ctl.abort(); }, 45000);
+    var res = await fetch(APPS_SCRIPT_URL, {method:'POST', body:JSON.stringify(payload()), signal:ctl.signal});
+    clearTimeout(tm);
+    var data = await res.json();
+    if (!data || !data.ok) throw new Error((data && data.error) || 'ERR');
+    state.sent = true; save(); sendErr = ''; sending = false; show('result'); return;
+  } catch (err) {
+    console.error(err);
+    sendErr = (err && err.message === 'NO_URL') ? 'El envío todavía no está conectado. Avisá a tu coach para completar la configuración.'
+      : (err && err.message === 'LIMIT_EMAIL' ? 'Ya se enviaron varias evaluaciones con este email en el día. Probá de nuevo mañana o escribile a tu coach.'
+      : 'No hubo conexión con el servidor o tardó demasiado. Revisá tu conexión y volvé a intentar.');
+  }
+  sending = false;
+  if (view === 'sending') show('sending');
+}
+function resetAll(){
+  try { localStorage.removeItem(LS_KEY); } catch(e){}
+  state = freshState(); sendErr = ''; sending = false; clearTimeout(advTimer);
+  show('intro'); toast('Listo, empezás de cero.');
+}
+
+/* ── EVENTOS ───────────────────────────────────────────────── */
+document.addEventListener('input', function(e){
+  var id = e.target.id;
+  if (id === 'fName') { state.nombre = e.target.value; save(); checkStart(); }
+  else if (id === 'fLast') { state.apellido = e.target.value; save(); checkStart(); }
+  else if (id === 'fMail') { state.email = e.target.value; save(); checkStart(); }
+  else if (id === 'qscale') { setScale(parseInt(e.target.value, 10)); }
 });
+document.addEventListener('click', function(e){
+  var el = e.target.closest('[data-action]'); if (!el) return;
+  var a = el.getAttribute('data-action');
+  switch (a) {
+    case 'start': if (!el.disabled) startEval(); break;
+    case 'resume': if (state.sid) show('q'); break;
+    case 'fresh': resetAll(); break;
+    case 'pick': setPick(el.getAttribute('data-l')); break;
+    case 'flip': el.classList.toggle('flipped'); break;
+    case 'next': if (!el.disabled) advance(); break;
+    case 'prev': goPrev(); break;
+    case 'chapGo': show('q'); break;
+    case 'retry': sendErr = ''; show('sending'); sendEval(); break;
+    case 'restart': $('btnRestart').classList.add('hidden'); $('restartConfirm').classList.remove('hidden'); break;
+    case 'restartNo': $('restartConfirm').classList.add('hidden'); $('btnRestart').classList.remove('hidden'); break;
+    case 'restartYes': resetAll(); break;
+  }
+});
+document.addEventListener('keydown', function(e){
+  if (view !== 'q') return;
+  var t = e.target && e.target.tagName;
+  if (t === 'INPUT' && e.target.type !== 'range') return;
+  var f = fmtOf(state.q), pickF = !(f === 'scale' || f === 'scnScale');
+  if (pickF && /^[abAB12]$/.test(e.key)) { e.preventDefault(); setPick(/[aA1]/.test(e.key) ? 'A' : 'B'); }
+  else if (e.key === 'ArrowLeft' && t !== 'INPUT') { goPrev(); }
+  else if ((e.key === 'ArrowRight' || e.key === 'Enter') && state.ans[curQ().id] && t !== 'BUTTON' && t !== 'INPUT') { advance(); }
+});
+
+/* ── ARRANQUE ──────────────────────────────────────────────── */
+load();
+if (state.sent) show('result');
+else if (state.done) { sendErr = ''; show('sending'); sendEval(); }
+else show('intro');
+
 </script>
 </body>
 </html>
